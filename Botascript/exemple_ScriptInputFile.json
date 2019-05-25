@@ -1,12 +1,4 @@
-/*#
 
-# Liste d'input:
-# - Ajouter 100 personnes tous les jours à 8h [Par CACA]
-# - Publier un post à 16h ("COucou les filles") [Par Chloé]
-# - Ajouter tous les Pauls à 8h, 16h , 17h tous les Lundis sur 3 jours [Par BERNARD]
-*/
-
-# Dans cet example il est par exemple 07:58 le 24 Mai 2019.
 {
 	"24-05-2019 8:00:00 +0200":{
 		
@@ -117,8 +109,7 @@
 				}
 			},
 			"Repop": false
-		},
-
+		}
 	},
 
 	"25-05-2019 17:00:00 +0200":{
@@ -170,7 +161,7 @@
 				}
 			},
 			"Repop": false
-		},
+		}
 
 	},
 
@@ -189,7 +180,7 @@
 			"Repop": false
 		}
 
-	},
+	}
 
 
 
