@@ -18,12 +18,12 @@ class Order:
 		self.alive =		bool(order_data[10])
 		self.log =			default_order_log
 
-		self.realized_already_called = False 		#Sécurité contre doublon
-
 		suppl_data = self.get_network_and_logins(order_data)
 		self.network = 		suppl_data[2]
 		self.login = 		suppl_data[0]
 		self.password = 	suppl_data[1]
+
+		self.realized_already_called = False 		#Sécurité contre doublon
 
 
 
@@ -75,6 +75,8 @@ class Order:
 		self._save()
 		message = self.log if message == "DEFAULT" else message
 		self._save_log_in_db(message)
+
+		self.realized_already_called = True #Ordre réalisé, sécurité ON
 
 	#Sauvegarde l'état actuel de l'ordre
 	def _save(self):

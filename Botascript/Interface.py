@@ -7,16 +7,7 @@ def resetDB():
 if __name__ == '__main__':
 	
 	print("=================== Some debugging stuff ===================")
-	from Orders import *
-	conn = sqlite3.connect(myDB)
-	c = conn.cursor()
-	res = c.execute('SELECT network_login, network_password, networks.network_name FROM accounts JOIN networks ON networks.id = accounts.network_id  WHERE user_id = 1 AND network_id = 1')
-	for answer in res:
-		print(answer[2])
-	#params = (self.exectime, self.alive , self.id)
-	#c.execute('UPDATE orders SET `exectime` = ?, `alive` = ? WHERE id=?', params)
-	#conn.commit()
-	conn.close()
+	
 
 else:
 
