@@ -41,3 +41,7 @@
 ordre = Order.first
 puts ordre.user.accounts.where(network: ordre.network).first.network_password
 puts ordre.network.network_name
+
+puts "=========="
+
+puts Account.first.user.orders.first.order_tag
