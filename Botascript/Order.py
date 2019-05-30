@@ -13,13 +13,27 @@ class Order:
 		self.intervalle = 	order_data[3]
 		self.exectime = 	datetime.strptime(order_data[4], '%Y-%m-%d %H:%M:%S')
 		self.endtime =		datetime.strptime(order_data[5], '%Y-%m-%d %H:%M:%S')
-		self.type =			order_data[6]
+		self.tag =			order_data[6]
 		self.args = 		order_data[7]
 		self.alive =		bool(order_data[10])
 		self.log =			default_order_log
 
-		self.realized_already_called = False 		#Sécurité
+		self.realized_already_called = False 		#Sécurité contre doublon
 
+		suppl_data = self.get_network_and_logins(order_data)
+		self.network = 		suppl_data[2]
+		self.login = 		suppl_data[0]
+		self.password = 	suppl_data[1]
+
+
+
+	def get_network_and_logins(self, order_data):
+		conn = sqlite3.connect(myDB)
+		c = conn.cursor()
+		params = (order_data[1], order_data[2])
+		res = c.execute('SELECT network_login, network_password, networks.network_name FROM accounts JOIN networks ON networks.id = accounts.network_id  WHERE user_id = ? AND network_id = ?', params)
+		for answer in res:
+			return answer
 
 
 	#Permet d'avoir une liste de log pour une seul et même éxécution
@@ -33,9 +47,9 @@ class Order:
 	#Représente l'ordre sous forme à peu près cohérente de tableau
 	def __str__(self):
 		return """
-		id\t\t\tintervalle\t\t\texectime\t\t\tendtime\t\t\tType d'ordre\t\t\tArguments\t\t\talive
+		id\t\t\tintervalle\t\t\texectime\t\t\tendtime\t\t\tTag d'ordre\t\t\tArguments\t\t\talive
 		{}\t\t\t{}\t\t\t{}\t\t\t{}\t\t\t{}\t\t\t{}\t\t\t{}
-		""".format(self.id, self.intervalle, self.exectime, self.endtime, self.type, self.args, self.alive)
+		""".format(self.id, self.intervalle, self.exectime, self.endtime, self.tag, self.args, self.alive)
 
 	def __repr__(self):
 		return self.__str__()
@@ -43,8 +57,9 @@ class Order:
 
 	# Ordre réalisé, modifie les logs, et met à jour l'ordre. /!\ CALLABLE ONLY 1 TIME /!\
 	def realized(self, message = "DEFAULT"):
-		if self.realized_already_called: #Sécurité
-			return false
+		
+		if self.realized_already_called: #Sécurité contre doublon
+			return False
 
 		if self.intervalle == 0:		#Tasks
 			self.alive = False
@@ -57,22 +72,22 @@ class Order:
 			else:
 				self.exectime = next_exec
 				
-		self.save()
+		self._save()
 		message = self.log if message == "DEFAULT" else message
-		self.write_log(message)
+		self._save_log_in_db(message)
 
 	#Sauvegarde l'état actuel de l'ordre
-	def save(self):
+	def _save(self):
 		conn = sqlite3.connect(myDB)
 		c = conn.cursor()
-		t = (self.exectime, self.alive , self.id)
-		c.execute('UPDATE orders SET `exectime` = ?, `alive` = ? WHERE id=?', t)
+		params = (self.exectime, self.alive , self.id)
+		c.execute('UPDATE orders SET `exectime` = ?, `alive` = ? WHERE id=?', params)
 		conn.commit()
 		conn.close()
 
 
 	# Ecrit dans les logs
-	def write_log(self,message="DEFAULT"):
+	def _save_log_in_db(self,message="DEFAULT"):
 		message = self.log if message == "DEFAULT" else message
 		conn = sqlite3.connect(myDB)
 		c = conn.cursor()

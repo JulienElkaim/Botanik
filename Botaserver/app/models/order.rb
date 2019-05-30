@@ -5,6 +5,6 @@ class Order < ApplicationRecord
   has_many :logs
 
   def self.convertTime(arg)
-  	 puts Time::secondConverter(arg)
+  	return Time::secondConverter(arg)
   end
 end
