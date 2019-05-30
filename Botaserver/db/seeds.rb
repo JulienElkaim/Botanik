@@ -23,4 +23,21 @@
 
 #Create order
 
-Order.create(user_id: 1, network_id: 1, intervalle: "3 semaines", exectime: DateTime.new(2001,2,3,4,5,6), endtime: DateTime.new(2001,2,3,4,5,6), order_tag: "tag order", order_args: "plein darguments")
+# Order.create(user_id: 1, network_id: 1, intervalle: 60*60*24*7*3, exectime: DateTime.new(2001,2,3,4,5,6), endtime: DateTime.new(2001,2,3,4,5,6), order_tag: "tag order", order_args: "plein darguments")
+# p (Order.first.user.orders)
+
+#Users created (id, username, password)
+#Networks created (id, network_name)
+
+#accounts created (id, user_id, network_id, network_login, network_password)
+	#network_id et user_id referencés comme des FK : OK !
+	#
+
+#orders created (id, user_id, network_id, intervalle, exectime, endtime, order_tag, order_args)
+
+#logs created (id, order_id, exectime, message)
+
+# MAKE SOME EXEC STUFF
+ordre = Order.first
+puts ordre.user.accounts.where(network: ordre.network).first.network_password
+puts ordre.network.network_name

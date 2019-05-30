@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_29_100825) do
+ActiveRecord::Schema.define(version: 2019_05_30_063107) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2019_05_29_100825) do
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
+  create_table "logs", force: :cascade do |t|
+    t.integer "order_id"
+    t.datetime "exectime"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_logs_on_order_id"
+  end
+
   create_table "networks", force: :cascade do |t|
     t.string "network_name"
     t.datetime "created_at", null: false
@@ -33,13 +42,14 @@ ActiveRecord::Schema.define(version: 2019_05_29_100825) do
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
     t.integer "network_id"
-    t.string "intervalle"
+    t.integer "intervalle", default: 0
     t.datetime "exectime"
     t.datetime "endtime"
     t.string "order_tag"
     t.string "order_args"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "alive", default: true
     t.index ["network_id"], name: "index_orders_on_network_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
