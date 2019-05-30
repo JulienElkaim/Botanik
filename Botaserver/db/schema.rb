@@ -10,27 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_132858) do
+ActiveRecord::Schema.define(version: 2019_05_29_100825) do
 
-  create_table "logins", primary_key: ["network_id", "user_id"], force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "network_id", null: false
-    t.text "network_login", null: false
-    t.text "network_password", null: false
+  create_table "accounts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "network_id"
+    t.string "network_login"
+    t.string "network_password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["network_id"], name: "index_accounts_on_network_id"
+    t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
   create_table "networks", force: :cascade do |t|
     t.string "network_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["network_name"], name: "index_networks_on_network_name", unique: true
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "intervalle"
-    t.datetime "exec_time"
-    t.datetime "Final_time"
-    t.string "order_tag"
-    t.string "order_args"
     t.integer "user_id"
     t.integer "network_id"
+    t.string "intervalle"
+    t.datetime "exectime"
+    t.datetime "endtime"
+    t.string "order_tag"
+    t.string "order_args"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["network_id"], name: "index_orders_on_network_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -38,6 +47,9 @@ ActiveRecord::Schema.define(version: 2019_05_28_132858) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

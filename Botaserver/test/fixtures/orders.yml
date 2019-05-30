@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  network: one
+  intervalle: MyString
+  exectime: 2019-05-29 12:08:25
+  endtime: 2019-05-29 12:08:25
+  order_tag: MyString
+  order_args: MyString
+
+two:
+  user: two
+  network: two
+  intervalle: MyString
+  exectime: 2019-05-29 12:08:25
+  endtime: 2019-05-29 12:08:25
+  order_tag: MyString
+  order_args: MyString

@@ -1,6 +1,3 @@
-class User < ActiveRecord::Base 	#ApplicationRecord
-  
-  validates :username, uniqueness: true
-  has_secure_password
-
+class User < ApplicationRecord
+	has_secure_password
 end

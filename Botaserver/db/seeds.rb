@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#Create Users
+# 10.times do |i|
+
+# 	u = User.create(username: "Julien#{i}", password: "Juju#{i}")
+
+# end
+
+
+# linkedin = Network.new(id: 1, network_name: "Linkedin" )
+# linkedin.save
+
+# acc = Account.new(id: 1, user_id: 1, network_id: 1, network_login: "monloginLinkedin", network_password: "monPwdLinkedin" )
+# acc.save
+
+
+#Create order
+
+Order.create(user_id: 1, network_id: 1, intervalle: "3 semaines", exectime: DateTime.new(2001,2,3,4,5,6), endtime: DateTime.new(2001,2,3,4,5,6), order_tag: "tag order", order_args: "plein darguments")

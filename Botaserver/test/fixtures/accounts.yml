@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  network: one
+  network_login: MyString
+  network_password: MyString
+
+two:
+  user: two
+  network: two
+  network_login: MyString
+  network_password: MyString
