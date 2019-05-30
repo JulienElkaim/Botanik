@@ -1,7 +1,7 @@
-import Interface
+from Interface import *
 
 
-orders = Interface.Orders()
+orders = Orders()
 for order in orders:
 	print(order)
 
