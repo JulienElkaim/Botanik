@@ -10,11 +10,14 @@ Tout ce dont tu as besoin c'est de savoir manipuler un objet de la class Order()
 
 Ces objets te permettent de retirer des informations sous forme d'attributs:
 
-- *tag* 		Qui est l'action à réaliser **(Ex: "ADD", "LIKE", "COMMENT", ... )**
-- *args* 		Qui est un dictionnaire d'arguments pour l'action **(Ex: {"Until":100} )**
-- *network* 	Qui est le nom du Network sur lequel opérer. **(Ex: "Linkedin", "Twitter")**
-- *login* 		Qui est le login/username de l'utilisateur sur ce network.
-- *password* 	Qui est le password de l'utilisateur sur ce network.
+- **tag** 		Qui est l'action à réaliser 
+	*(Ex: "ADD", "LIKE", "COMMENT", ... )*
+- **args** 		Qui est un dictionnaire d'arguments pour l'action 
+	*(Ex: {"Until":100} )*
+- **network** 	Qui est le nom du Network sur lequel opérer. 
+	*(Ex: "Linkedin", "Twitter")*
+- **login** 		Qui est le login/username de l'utilisateur sur ce network.
+- **password** 	Qui est le password de l'utilisateur sur ce network.
 
 Les objets Order() permettent également de récupérer les logs les plus pertinentes pour les remonter à l'utilisateur par le biais du site.
 Pour remonter une log, il suffit d'appeler la méthode *.logs(your_message_here)*
