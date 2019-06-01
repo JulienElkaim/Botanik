@@ -1,8 +1,10 @@
 # Botascript - Instructions
 
-## Interface
+Enjoy your life.
 
-### Essential to know
+# Botascript - Interface
+
+## Essential to know
 
 Tout ce dont tu as besoin c'est de savoir manipuler un objet de la class Order().
 
@@ -18,7 +20,7 @@ Les objets Order() permettent également de récupérer les logs les plus pertin
 Pour remonter une log, il suffit d'appeler la méthode *.logs(your_message_here)*
 
 
-### Best practice ever !
+## Best practice ever !
 
 ```python
 orders = Orders() # Orders list creation, empty.
