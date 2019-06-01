@@ -1,36 +1,59 @@
-from Interface import *
-TUTO_MODE = True 	#Set -> True during training stage. Otherwise, False.
-DEV_MODE = False 	#Set -> True during development stage. Otherwise, False.
-PROD_MODE = False 	#Set -> True during production stage. Otherwise, False.
+from back_process.Interface import *
+
+#===============/!\ IGNORE IT /!\=======================
+ordersToExec = Orders() # Orders list creation, empty.
+ordersToExec.getWork() # Fill the list with orders to execute.
+#=======================================================
 
 
 
-orders = Orders() #Objet principal, une liste d'ordres
+##############################################################################
+###################### PARTIE MODIFIABLE EN-DESSOUS ##########################
+##############################################################################
 
 
 
 
-for order in orders:
-	print(order)
+# ============== BENJAMIN ! Choisir un mode ===================
+MODE = { "CRASH": True, "DEV": False, "PROD": False}
+# =============================================================
 
 
-if TUTO_MODE:
+
+
+if MODE["CRASH"]:
 	
+	getFakeDB(); #Erase DB and create fake records.
+	print("\n\n=========== THIS IS A WAR ZONE =============\n\n")
 	
-	print("\n\n=========== You are in TUTORIAL MODE =============\n\n")
-
-	## Code de tutoriel
-	resetDB()			#Goto the ../Botaserver/db/seeds.rb file to create fake records.
-	launchTutoriel() 	#Goto Interface.py to see tutorial comments.
-	#Comment above lines if necessary.
-
+	# Dirty stuff 
 	
 
-if DEV_MODE:
-	print("\n\n=========== You are in DEVELOPMENT MODE ===========\n\n")
-	## Code en developemment
+
+if MODE["DEV"]:
+	print("\n\n=========== DEVELOPMENT MODE ===========\n\n")
+
+	for order in ordersToExec:
+		# /!\ Ton code ICI /!\
+		pass
+		
+
+	orders.finished() #Ensure to notify database 
 
 
-if PROD_MODE:
-	print("\n\n=========== You are in PRODUCTION ================\n\n")
-	## Code en production
+
+
+if MODE["PROD"]:
+	print("\n\n=========== PRODUCTION ================\n\n")
+	
+	for order in orders:
+		# Paste here your best "dev code" ever !
+		pass
+		
+
+
+
+
+
+
+

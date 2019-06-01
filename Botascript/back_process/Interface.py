@@ -1,13 +1,22 @@
-from Orders import Orders
+from .Orders import Orders
 import os
 
-def resetDB():
-	os.system('cd .. && cd Botaserver && rake db:drop && rake db:create && rake db:migrate && rake db:seed')
+def getFakeDB():
+	import os
+	dirname = os.path.dirname(__file__)
+
+	botanik = os.path.join(dirname, '../..')
+	
+	os.system('cd {} && cd Botaserver && rake db:drop && rake db:create\
+	 && rake db:migrate && rake db:seed'.format(botanik))
 
 if __name__ == '__main__':
 	
 	print("=================== Some debugging stuff ===================")
 	
+	####################################################################
+	###################### ZONE POUR DEBUGGING #########################
+	####################################################################
 
 else:
 
@@ -29,7 +38,7 @@ else:
 
 		#2 - Recuperer les ordres qui sont actuellement a faire avec .taff()
 		print("\n\n===================== 2 ==========================\n\n")
-		orders.taff()
+		orders.getWork()
 		print(orders)
 		for order in orders:
 			print(order)
