@@ -9,10 +9,8 @@ class Order:
 
 
 	def __init__(self, order_data):
+		#Variables pour benjamin
 		self.id = 			order_data[0]
-		self.intervalle = 	order_data[3]
-		self.exectime = 	datetime.strptime(order_data[4], '%Y-%m-%d %H:%M:%S')
-		self.endtime =		datetime.strptime(order_data[5], '%Y-%m-%d %H:%M:%S')
 		self.tag =			order_data[6]
 		self.args = 		order_data[7]
 		self.alive =		bool(order_data[10])
@@ -23,6 +21,10 @@ class Order:
 		self.login = 		suppl_data[0]
 		self.password = 	suppl_data[1]
 
+		#Variables pour le back
+		self.intervalle = 	order_data[3]
+		self.exectime = 	datetime.strptime(order_data[4], '%Y-%m-%d %H:%M:%S')
+		self.endtime =		datetime.strptime(order_data[5], '%Y-%m-%d %H:%M:%S')
 		self.realized_already_called = False 		#Securite contre doublon
 
 

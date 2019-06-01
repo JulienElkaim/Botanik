@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/tutorial'
   #get 'users/home'
-  get 'home', to: 'users#home', as: :home
-  root to: 'users#home'
+  get 'home', to: 'pages#home', as: :home
+  root to: 'pages#home'
 
   # Generic syntax:
   # verb 'path', to: 'controller#action', as: :route_name
