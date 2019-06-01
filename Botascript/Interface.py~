@@ -60,7 +60,7 @@ else:
 		print("Rien de visuel. 		Cf. les commentaires du code.")
 
 
-		#6 - Apres avoir realise tous les ordres, une bonne pratique est de marquer la liste d'ordres comme finie
+		#6 - Apres avoir réalise tous les ordres, une bonne pratique est de marquer la liste d'ordres comme finie
 		print("\n\n===================== 6 ==========================\n\n")
 		orders.finished()
 		#Cela appelle .realized() sur tous les ordres. Pratique, si l'on en oublie un !

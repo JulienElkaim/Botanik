@@ -55,7 +55,7 @@ class Order:
 		return self.__str__()
 
 
-	# Ordre realise, modifie les logs, et met a jour l'ordre. /!\ CALLABLE ONLY 1 TIME /!\
+	# Ordre realise, modifie les logs, et met à jour l'ordre. /!\ CALLABLE ONLY 1 TIME /!\
 	def realized(self, message = "DEFAULT"):
 		
 		if self.realized_already_called: #Securite contre doublon

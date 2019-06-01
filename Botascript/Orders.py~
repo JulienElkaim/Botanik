@@ -47,7 +47,7 @@ class Orders:
 			raise StopIteration
 
 	def __str__(self):
-		return "Je possede actuellement {} ordres a executer.".format(len(self.orders_list))
+		return "Je possede actuellement {} ordres à executer.".format(len(self.orders_list))
 
 
 

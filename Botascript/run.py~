@@ -8,12 +8,6 @@ PROD_MODE = False 	#Set -> True during production stage. Otherwise, False.
 orders = Orders() #Objet principal, une liste d'ordres
 
 
-
-
-for order in orders:
-	print(order)
-
-
 if TUTO_MODE:
 	
 	
