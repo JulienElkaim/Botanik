@@ -15,7 +15,7 @@ ordersToExec.getWork() # Fill the list with orders to execute.
 
 
 # ============== BENJAMIN ! Choisir un mode ===================
-MODE = { "CRASH": True, "DEV": False, "PROD": False}
+MODE = { "CRASH": False, "DEV": True, "PROD": False}
 # =============================================================
 
 
@@ -38,7 +38,7 @@ if MODE["DEV"]:
 		pass
 		
 
-	orders.finished() #Ensure to notify database 
+	ordersToExec.finished() #Ensure to notify database 
 
 
 
@@ -46,11 +46,12 @@ if MODE["DEV"]:
 if MODE["PROD"]:
 	print("\n\n=========== PRODUCTION ================\n\n")
 	
-	for order in orders:
-		# Paste here your best "dev code" ever !
+	for order in ordersToExec:
+		# /!\ Ton code ICI /!\
 		pass
 		
 
+	ordersToExec.finished() #Ensure to notify database 
 
 
 
