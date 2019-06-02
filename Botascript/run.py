@@ -13,13 +13,10 @@ A faire en cas de manque de db dans Botaserver:
     'rake db:drop && rake db:create && rake db:migrate && rake db:seed'
 """
 
+from ben_script.order_treatment import read
 from back_process.Interface import getFakeDB
 from back_process.Interface import Orders
 
-# =============================================================================
-# sys.path.insert(0, './ben_script')
-# import order_treatment
-# =============================================================================
 
 #===============/!\ IGNORE IT /!\=======================
 # =============================================================================
@@ -45,9 +42,11 @@ def dev():
     orders_to_exec.getWork()
 
     print("=========== DEVELOPMENT MODE ===========")
+
+
     for order in orders_to_exec:
-        print(order.login)
-        print(order.password)
+        read(order)
+
 
     orders_to_exec.finished() #Ensure to notify database
 
