@@ -2,13 +2,12 @@ from .Orders import Orders
 import os
 
 def getFakeDB():
-	import os
 	dirname = os.path.dirname(__file__)
 
 	botanik = os.path.join(dirname, '../..')
-	
-	os.system('cd {} && cd Botaserver && rake db:drop && rake db:create\
-	 && rake db:migrate && rake db:seed'.format(botanik))
+
+	os.system('cd {} && cd Botaserver && rake db:drop && rake db:create'
+	 '&& rake db:migrate && rake db:seed'.format(botanik))
 
 if __name__ == '__main__':
 	

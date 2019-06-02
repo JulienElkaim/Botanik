@@ -77,7 +77,6 @@ Log.create(order_id: 1, exectime: DateTime.new(2000,5,30,4,5,8),  message: "FAIL
 
 
 
-
 #================ STUFF FOR EDITING =====================================
 #Users created (id, username, password)
 #Networks created (id, network_name)

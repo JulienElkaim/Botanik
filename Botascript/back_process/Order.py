@@ -67,7 +67,7 @@ class Order:
 
 		else:							#Routines
 
-			next_exec = self.exectime + timedelta(seconds=self.intervalle)
+			next_exec = datetime.now() + timedelta(seconds=self.intervalle)
 			
 			if next_exec > self.endtime:
 				self.alive = False
