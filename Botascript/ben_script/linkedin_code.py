@@ -2,59 +2,61 @@
 """
 Code bot Linkedin
 """
-#import logging
+
+# =============================================================================
+# IMPORTING
+# =============================================================================
 
 from time import sleep
-from datetime import datetime
 from selenium import webdriver
-#from time import time
-#from selenium.webdriver.support.ui import WebDriverWait
-#from selenium.webdriver.support import expected_conditions as EC
-
-#logger = logging.getLogger()
 
 SCROLL_PAUSE_TIME = 0.5
 LOOPS = 3
 N_SCROLL = 2
 
+# =============================================================================
+# Initialisation
+# =============================================================================
 
-class Fire:
+class Linkedin:
     # pylint: disable=too-many-instance-attributes
     # Eight is reasonable in this case.
     # pylint: disable= W0702
     # Noexception type value: resolution impossible
-    """Class to control the bot"""
-    def __init__(self, login, password):
+    """
+    Class to control the bot
+    form of arguments:
+        - login: mail.
+        - pwd: pwd.
+        - arg: {
+                "number" : 15,
+                "name": ["str","ings"],
+                "job": ["policeman", "farmer"],
+                "places": ["city", "country"],
+                "firms": ["Google", "Amazon"],
+                "qualifications": ["internship","Degree","Senior"],
+                "common_friends": ["MIN"/"MAX", int]
+                }
+
+    """
+    def __init__(self, login, password, arg):
         """Init variables"""
         self.driver = webdriver.Firefox()
+        self.mail = login
+        self.password = password
+        self.arg = arg
+        self.but = "//*[contains(@class, 'js-discover-person-card__action-btn full-width artdeco-button artdeco-button--2 artdeco-button--full artdeco-button--secondary ember-view')]"
+        #print(self.but, "\n" + str(self.but0), "\nEgalité:", self.but == self.but0)
         self.test = 0
         self.count = 0
         self.connecter = True
         self.connection = True
-        self.mail = login
-        self.password = password
-        self.but = "//*[contains(@class, 'js-discover-person-card__action-btn full-width artdeco-button artdeco-button--2 artdeco-button--full artdeco-button--secondary ember-view')]"
-        #print(self.but, "\n" + str(self.but0), "\nEgalité:", self.but == self.but0)
 
-    def login(self):
-        """Try to log in to the web site"""
-        try:
-            self.driver.get("https://www.linkedin.com/login")
+        self.log_to_send = []
 
-            self.driver.find_element_by_id("username").send_keys(self.mail)
-            self.driver.find_element_by_id("password").send_keys(self.password)
-            self.driver.find_element_by_xpath("//button[@type='submit']").submit()
-        except:
-            self.printer("Erreur de login")
-
-    def page(self):
-        """Try to connect to the network page"""
-        while self.connection:
-            try:
-                self.driver.find_element_by_id("mynetwork-nav-item").click()
-                self.connection = False
-            except:
-                sleep(0.5)
+# =============================================================================
+# Fonctions for others
+# =============================================================================
 
     def scroll(self):
         """Scroll N_SCROLL times"""
@@ -80,7 +82,7 @@ class Fire:
             self.connecter = self.driver.find_element_by_xpath(self.but)
         except:
             #logger.error("Fail to select connection button: " + str(e))
-            self.printer("Failed to select connection button")
+            print("Failed to select connection button")
 
     def clickeur(self):
         """Count successful connection(s) or refresh page"""
@@ -92,6 +94,32 @@ class Fire:
             #logger.error("Failed to click: " + str(e))
             #print("Failed to click")
             self.test += 1
+
+# =============================================================================
+# Functions for the mains
+# =============================================================================
+
+    def login(self):
+        """
+        Try to login to a web site, Linkedin by default.
+        """
+        try:
+            self.driver.get("https://www.linkedin.com/login")
+
+            self.driver.find_element_by_id("username").send_keys(self.mail)
+            self.driver.find_element_by_id("password").send_keys(self.password)
+            self.driver.find_element_by_xpath("//button[@type='submit']").submit()
+        except:
+            self.printer("ERROR:: Unable to connect with this login")
+
+    def page(self):
+        """Try to connect to the network page"""
+        while self.connection:
+            try:
+                self.driver.find_element_by_id("mynetwork-nav-item").click()
+                self.connection = False
+            except:
+                sleep(0.5)
 
     def clicker(self):
         """
@@ -107,45 +135,49 @@ class Fire:
                 self.clickeur()
                 if self.test > LOOPS:
                     break
+                try:
+                    if self.count > self.arg["number"]:
+                        break
+                except KeyError as error:
+                    print(error)
             self.driver.refresh()
 
-        self.printer("Number of connection(s) added: " + str(self.count))
-# =============================================================================
-#         print("\nEnd of the session due to more than ", LOOPS, " refresh.\n"
-#               "Number of connection(s) added: ", self.count, "\n")
-# =============================================================================
+        self.printer("SUCCESS:: Number of connection(s) added: " + str(self.count))
+
     def close(self):
         """Close the driver"""
         self.driver.close()
 
     def printer(self, message):
-        """Print date with message automatically"""
-        now = datetime.now()
-        print("[" + now.strftime("%Y-%m-%d %H:%M:%S") + "]",
-              str(self.mail) + ":", message)
-
-if __name__ == "__main__":
-    #start = time()
-
-    SESSION = Fire("nim", "portequoi")
-    #fire = str(time() - start)[0:3]
-
-    SESSION.login()
-    #login = str(time() - start)[0:3]
-
-    SESSION.page()
-    #page = str(time() - start)[0:3]
-
-    SESSION.clicker()
-    #clicker = str(time() - start)[0:3]
-
-    SESSION.close()
-    #end = str(time() - start)[0:3]
+        """
+        Send message to a table serving to send logs after.
+        """
+        self.log_to_send.append(message)
 
 # =============================================================================
-#     print("execution time fire =", fire + "s")
-#     print("execution time login =", login + "s")
-#     print("execution time page =", page + "s")
-#     print("execution time clicker =", clicker + "s")
-#     print("TOTAL EXECUTION TIME =", end + "s")
+# TAG FUNCTION => MAIN
 # =============================================================================
+
+    def add(self):
+        """
+        Used for order.tag == ADD:
+            - arg{name, number, job, common_friends}
+        """
+        self.login()
+        self.page()
+        self.clicker()
+        self.close()
+
+    def post(self):
+        """
+        Used for order.tag == POST:
+            - arg{to set later}
+        """
+        self.printer("SUCCESS:: TO DO NO POST")
+
+    def postuler(self):
+        """
+        Used for order.tag == POST:
+            - arg{to set later}
+        """
+        self.printer("SUCCESS:: TO DO NOT POSTULER")

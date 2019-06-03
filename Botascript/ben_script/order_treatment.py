@@ -9,7 +9,7 @@ DEPENDANCE: imported by run.py and takes object Order.
 Principal function is read().
 """
 
-#import linkedin_code to use later
+from ben_script.linkedin_code import Linkedin
 
 def start():
     """test to understand how to formulate the code"""
@@ -22,7 +22,31 @@ def read(order):
     start()
     print("login   :", order.login)
     print("password:", order.password)
-    print("log:", order.log)
-    print("network:", order.network)
-    print("args:", order.args)
-    print("tag:", order.tag)
+    print("log     :", order.log)
+    print("network :", order.network)
+    print("args    :", order.args)
+    print("tag     :", order.tag)
+
+# =============================================================================
+#     if(order.network == "INSTAGRAM"):
+#         Session = Instagram(order.login, order.password, order.network, order.arg)
+#     if(order.network == "FACEBOOK"):
+#         Session = Facebook(order.login, order.password, order.network, order.arg)
+#     else:
+# =============================================================================
+    session = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A", {})
+
+# =============================================================================
+#     if(order.tag == "ADD"):
+#         Session.add()
+#     if(order.tag == "POST"):
+#         Session.post()
+#     if(order.tag == "POSTULER"): #unique for Linkedin
+#         Session.postuler
+# =============================================================================
+    #order.log(Session.log_to_send)
+    session.add()
+    session.post()
+    session.postuler()
+
+    print(session.log_to_send)

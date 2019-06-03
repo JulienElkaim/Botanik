@@ -11,6 +11,8 @@ A faire en cas de manque de db dans Botaserver:
 - Si non faire : 'bash --login' et 'rvm use 2.4.4
 - Initialiser la db:
     'rake db:drop && rake db:create && rake db:migrate && rake db:seed'
+
+ATTENTION A NE PAS METTRE DE ";" DANS LES LOGS
 """
 
 from ben_script.order_treatment import read
@@ -43,10 +45,9 @@ def dev():
 
     print("=========== DEVELOPMENT MODE ===========")
 
-
     for order in orders_to_exec:
         read(order)
-
+        break
 
     orders_to_exec.finished() #Ensure to notify database
 
