@@ -52,6 +52,8 @@ class Linkedin:
         self.connecter = True
         self.connection = True
 
+        print("Argument(s) recieved:", self.arg)
+
         self.log_to_send = []
 
 # =============================================================================
@@ -95,6 +97,27 @@ class Linkedin:
             #print("Failed to click")
             self.test += 1
 
+    def arg_number(self):
+        """
+        Not sure the function is functional but try to use argument
+        "until" if it is defined
+        """
+        try:
+            if self.count > self.arg["until"]:
+                self.test = LOOPS
+        except KeyError as error:
+            print("KeyError: arg['until'] missing\nError:", error)
+
+    def try_non_existing_arg(self):
+        """
+        Successful test to show what happend if an argument isn't defined
+        """
+        try:
+            if self.count > self.arg["inexistant"]:
+                self.test = LOOPS
+        except KeyError as error:
+            print("KeyError:", error, "is missing")
+
 # =============================================================================
 # Functions for the mains
 # =============================================================================
@@ -127,19 +150,19 @@ class Linkedin:
         at most LOOPS times before stopping
         """
         self.count -= 1
+
         while(self.connecter and self.test < LOOPS):
             self.scroll()
             sleep(0.5)
+
             for _ in range(50):
-                self.find_connecter()
-                self.clickeur()
                 if self.test > LOOPS:
                     break
-                try:
-                    if self.count > self.arg["number"]:
-                        break
-                except KeyError as error:
-                    print(error)
+
+                self.find_connecter()
+                self.clickeur()
+                self.arg_number()
+
             self.driver.refresh()
 
         self.printer("SUCCESS:: Number of connection(s) added: " + str(self.count))
@@ -181,3 +204,8 @@ class Linkedin:
             - arg{to set later}
         """
         self.printer("SUCCESS:: TO DO NOT POSTULER")
+
+
+if __name__ == "__main__":
+    SESSION = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A", {"until": 5})
+    SESSION.add()

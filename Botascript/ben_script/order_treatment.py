@@ -22,10 +22,11 @@ def read(order):
     start()
     print("login   :", order.login)
     print("password:", order.password)
-    print("log     :", order.log)
     print("network :", order.network)
-    print("args    :", order.args)
     print("tag     :", order.tag)
+    print("args    :", order.args)
+    print(order.args.__class__)
+    print("log     :", order.log)
 
 # =============================================================================
 #     if(order.network == "INSTAGRAM"):
@@ -34,7 +35,7 @@ def read(order):
 #         Session = Facebook(order.login, order.password, order.network, order.arg)
 #     else:
 # =============================================================================
-    session = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A", {"number": 10})
+    session = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A", {"until": 5})
 
 # =============================================================================
 #     if(order.tag == "ADD"):
