@@ -23,3 +23,35 @@ JavaScript warning: https://static.licdn.com/sc/h/br/89em2mvm9q1pcl88klnuy1mdo, 
 ###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
 
 [Parent 11099, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-xkwMhH/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559589640370	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.cGJPlPg3uLJO"
+1559589641378	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559589641378	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559589641378	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559589645769	Marionette	INFO	Listening on port 42697
+1559589645855	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:4962): dconf-WARNING **: 21:20:53.121: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/44lpm3xommt4uaobb0rsjjk0w, line 1: ReferenceError: __babelPolyfillDefine is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/89em2mvm9q1pcl88klnuy1mdo, line 7532: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559588156256%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/89em2mvm9q1pcl88klnuy1mdo, line 7532: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/89em2mvm9q1pcl88klnuy1mdo, line 7532: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript error: https://static.licdn.com/sc/h/br/f022l5t98q3bnx5oq591mjy8n, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/35b9jwqxnvobzu61vlfughpu1, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/dbwga24254wjpl0d25y73mhz3, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/9jhttev53ut4uypdphshpgbwa, line 2: ReferenceError: define is not defined
+1559589858103	Marionette	INFO	Stopped listening on port 42697
+[Parent 4778, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-xkwMhH/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 4778, Gecko_IOThread] WARNING: pipe error (71): Connexion ré-initialisée par le correspondant: file /build/firefox-xkwMhH/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357

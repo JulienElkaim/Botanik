@@ -34,7 +34,7 @@ def read(order):
 #         Session = Facebook(order.login, order.password, order.network, order.arg)
 #     else:
 # =============================================================================
-    session = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A", {})
+    session = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A", {"number": 10})
 
 # =============================================================================
 #     if(order.tag == "ADD"):
