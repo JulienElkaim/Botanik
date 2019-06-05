@@ -10,8 +10,8 @@
 
 #Create Fake Users
 User.create([
-	{username: "Julien Elkaim", password: "PizzaIsLife"},
-	{username: "Benjamin Soulan", password: "CookieIsLife"}
+	{username: "Julien Elkaim", password: "PizzaIsLife", email:"victor.ben-ami@hotmail.com"},
+	{username: "Benjamin Soulan", password: "CookieIsLife", email: "benacaca@orange.fr"}
 ])
 # end
 
