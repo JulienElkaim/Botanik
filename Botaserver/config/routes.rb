@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'pages/tutorial'
+  
   #get 'users/home'
   get 'home', to: 'pages#home', as: :home
+  get 'autre', to: 'pages#autre', as: :autre
   root to: 'pages#home'
 
   # Generic syntax:
