@@ -103,8 +103,8 @@ class Linkedin:
         "until" if it is defined
         """
         if "until" in self.arg:
-            if self.test >= self.arg_number:
-                self.test = LOOPS
+            if self.count >= self.arg["until"]:
+                self.test = LOOPS + 1
 
     def try_non_existing_arg(self):
         """
