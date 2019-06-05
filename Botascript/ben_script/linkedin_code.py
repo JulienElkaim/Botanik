@@ -102,11 +102,9 @@ class Linkedin:
         Not sure the function is functional but try to use argument
         "until" if it is defined
         """
-        try:
-            if self.count > self.arg["until"]:
+        if "until" in self.arg:
+            if self.test >= self.arg_number:
                 self.test = LOOPS
-        except KeyError as error:
-            print("KeyError: arg['until'] missing\nError:", error)
 
     def try_non_existing_arg(self):
         """

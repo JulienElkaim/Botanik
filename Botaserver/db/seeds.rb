@@ -28,7 +28,7 @@ Network.create([
 
 #Create Fake Accounts
 Account.create([
-	{user_id: 1, network_id: 1,network_login: "julien.linkedin@gmail.com", network_password: "JusDePommeLinkedin" },
+	{user_id: 1, network_id: 1,network_login: "victor.ben-ami@hotmail.com", network_password: "Vo0RdQBkNZrB2usB9Hum" },
 	{user_id: 1, network_id: 2,network_login: "julien.instagram@gmail.com", network_password: "JusDePommeInstagram" },
 	{user_id: 2, network_id: 1,network_login: "benjamin.linkedin@orange.fr", network_password: "BenjaminButtonLinkedin" },
 	{user_id: 2, network_id: 2,network_login: "benjamin.instagram@orange.fr", network_password: "BenjaminButtonInstagram"},
@@ -44,7 +44,7 @@ Order.create([
 	#Julien veut ajouter 100 personnes, 
 	#toutes les 3 semaines, 
 	#sur LINKEDIN
-	{user_id: 1, network_id: 1, intervalle: Order.convertTime("3 semaines"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2020,5,30,4,5,6), order_tag: "ADD", order_args: '{"Until": 500}'},
+	{user_id: 1, network_id: 1, intervalle: Order.convertTime("3 semaines"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2020,5,30,4,5,6), order_tag: "ADD", order_args: '{"until": 3}'},
 	
 	#Julien veut liker 50 personnes,
 	#une seule fois,
