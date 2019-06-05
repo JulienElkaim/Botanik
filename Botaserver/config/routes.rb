@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'pages/tutorial'
   #get 'users/home'
   get 'home', to: 'pages#home', as: :home
