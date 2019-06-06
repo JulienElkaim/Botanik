@@ -9,6 +9,7 @@ Code bot Linkedin
 
 from time import sleep
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 SCROLL_PAUSE_TIME = 0.5
 LOOPS = 3
@@ -29,9 +30,10 @@ class Linkedin:
         - login: mail.
         - pwd: pwd.
         - arg: {
-                "number" : 15,
+                "until" : 15,
                 "name": ["str","ings"],
                 "job": ["policeman", "farmer"],
+                "school": ["HEC Paris", "ICN BS"]
                 "places": ["city", "country"],
                 "firms": ["Google", "Amazon"],
                 "qualifications": ["internship","Degree","Senior"],
@@ -97,7 +99,7 @@ class Linkedin:
             #print("Failed to click")
             self.test += 1
 
-    def arg_number(self):
+    def until_limit(self):
         """
         Not sure the function is functional but try to use argument
         "until" if it is defined
@@ -107,14 +109,27 @@ class Linkedin:
                 self.test = LOOPS + 1
 
     def try_non_existing_arg(self):
-        """
-        Successful test to show what happend if an argument isn't defined
-        """
+        """ Successful test to show what happend if an argument isn't defined"""
         try:
             if self.count > self.arg["inexistant"]:
                 self.test = LOOPS
         except KeyError as error:
             print("KeyError:", error, "is missing")
+
+    def formulaire(self, inputs, string):
+        """ Fill formulaires to filter the research"""
+        if string in self.arg:
+            for lieu in self.arg[string]:
+                inputs[string].clear()
+                inputs[string].send_keys(lieu)
+                sleep(2)
+                try:
+                    inputs[string].send_keys(Keys.ENTER)
+                except:
+                    self.printer("WARNING:: Failed to enter '" + str(lieu) +
+                                 "' : not in Linkedin database.")
+                    inputs[string].clear()
+
 
 # =============================================================================
 # Functions for the mains
@@ -159,7 +174,7 @@ class Linkedin:
 
                 self.find_connecter()
                 self.clickeur()
-                self.arg_number()
+                self.until_limit()
 
             self.driver.refresh()
 
@@ -176,6 +191,47 @@ class Linkedin:
         self.log_to_send.append(message)
 
 # =============================================================================
+# TEST
+# =============================================================================
+    def add_specific(self):
+        """
+        'Override' of add function to connect with specific people
+
+        connexion à l'adresse "https://www.linkedin.com/search/results/people/?facetNetwork=["S"]"
+
+        forme des arguments php:
+            (- 2e relation: &facetNetwork=["S"])
+            - mot clé (très aléatoire): &keywords=string
+            - école: &school=string
+            - page: &page=int
+            - entreprise actuelle: &facetCurrentCompany=["int", "int"]
+
+        forme des arguments à créer, les chaînes de caractères à gérer doivent
+        être précises:
+            - relation: personnes en relation à une autre
+            - lieux[]
+            - current_e[]: entreprise actuelle
+            - former_e[]: entreprise précédente
+            - sector[]
+            - school[]
+
+
+        C'est complètement une très mauvaise idée de faire par requete http.
+        """
+
+        self.driver.get('https://www.linkedin.com/search/results/people/?facetNetwork=["S"]')
+        self.driver.find_element_by_class_name("search-filters-bar__all-filters.flex-shrink-zero.mr3.artdeco-button.artdeco-button--muted.artdeco-button--2.artdeco-button--tertiary.ember-view").click() #filtre
+        formulaire = self.driver.find_elements_by_class_name("ember-text-field.ember-view")
+        inputs = {"relation": formulaire[0], "lieux": formulaire[1],
+                  "current_e": formulaire[2], "former_e": formulaire[3],
+                  "sector": formulaire[4], "school": formulaire[5]}
+
+        for string in inputs:
+            self.formulaire(inputs, string)
+        boutton_appliquer_filtre = self.driver.find_element_by_class_name("search-advanced-facets__button--apply.ml4.mr2.artdeco-button.artdeco-button--3.artdeco-button--primary.ember-view")
+        boutton_appliquer_filtre.click()
+
+# =============================================================================
 # TAG FUNCTION => MAIN
 # =============================================================================
 
@@ -186,7 +242,11 @@ class Linkedin:
         """
         self.login()
         self.page()
-        self.clicker()
+        if not ((("until" in self.arg) and len(self.arg) == 1)
+                or not self.arg): #not arg == True => arg non vide
+            self.add_specific()
+        else:
+            self.clicker()
         self.close()
 
     def post(self):
@@ -205,5 +265,17 @@ class Linkedin:
 
 
 if __name__ == "__main__":
-    SESSION = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A", {"until": 5})
+    SESSION = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A",
+                       {"until": 5})
+# =============================================================================
+#                         ,
+#                         "lieux": ["France", "Royaume-uni"],
+#                         "current_e":["bn"],
+#                         "former_e":["societe ge", "rotschild"],
+#                         "sector":["banque"],
+#                         "school":["hec paris", "ICN"]
+# =============================================================================
+
     SESSION.add()
+    for info in SESSION.log_to_send:
+        print(info)
