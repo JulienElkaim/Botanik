@@ -2114,3 +2114,431 @@ JavaScript error: chrome://browser/content/browser-customization.js, line 167: N
 [Parent 22377, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-xkwMhH/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
 [Parent 22377, Gecko_IOThread] WARNING: pipe error (86): Connexion ré-initialisée par le correspondant: file /build/firefox-xkwMhH/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
 1559844890688	Marionette	INFO	Stopped listening on port 33629
+1559909739960	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.jPjaJKuZ9cHf"
+1559909740610	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559909740610	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559909740610	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559909744417	Marionette	INFO	Listening on port 41217
+1559909744496	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:16210): dconf-WARNING **: 14:15:47.746: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 2556: SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1559909821561	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.u5lE8Wi0flc9"
+1559909822115	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559909822115	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559909822115	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 16076, Gecko_IOThread] WARNING: pipe error (72): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 16076, Gecko_IOThread] WARNING: pipe error (91): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559909825688	Marionette	INFO	Listening on port 44311
+1559909825773	Marionette	WARN	TLS certificate errors will be ignored for this session
+1559909826253	Marionette	INFO	Stopped listening on port 41217
+
+(/usr/lib/firefox/firefox:16578): dconf-WARNING **: 14:17:08.345: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 2556: SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/cxbt2c62n60s51783g1exj6ef, line 26: NotFoundError: The operation failed because the requested database object could not be found. For example, an object store did not exist but was being opened.
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+[Parent 16449, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 16449, Gecko_IOThread] WARNING: pipe error (94): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559909895426	Marionette	INFO	Stopped listening on port 44311
+1559909895983	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.WgLowJuanZGr"
+1559909896541	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559909896541	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559909896541	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559909899909	Marionette	INFO	Listening on port 39479
+1559909899994	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:16888): dconf-WARNING **: 14:18:22.093: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/cxbt2c62n60s51783g1exj6ef, line 26: NotFoundError: The operation failed because the requested database object could not be found. For example, an object store did not exist but was being opened.
+1559909936313	Marionette	INFO	Stopped listening on port 39479
+[Parent 16760, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559909950977	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Rv5baWrpYFnG"
+1559909951525	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559909951525	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559909951526	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559909954781	Marionette	INFO	Listening on port 36381
+1559909954797	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:17175): dconf-WARNING **: 14:19:16.369: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/cxbt2c62n60s51783g1exj6ef, line 26: NotFoundError: The operation failed because the requested database object could not be found. For example, an object store did not exist but was being opened.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+console.error: "Error while calling actor 'pagestyle's method 'getLayout'" "node is null"
+console.error: "getLayout@resource://devtools/server/actors/styles.js:830:5\nhandler@resource://devtools/shared/protocol.js:1189:37\nonPacket@resource://devtools/server/main.js:1291:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Protocol error (unknownError): node is null"
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:443:26\ngetGrids@resource://devtools/server/actors/layout.js:448:43\nhandler@resource://devtools/shared/protocol.js:1189:37\nonPacket@resource://devtools/server/main.js:1291:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.warn: "Got an unexpected frameLoad in the inspector, please file a bug on bugzilla.mozilla.org!"
+console.trace: 
+resource://devtools/shared/fronts/inspector.js 346 getMutations/<
+console.error: "Error while calling actor 'layout's method 'getGrids'" "node is null"
+console.error: "getGrids@resource://devtools/server/actors/layout.js:443:26\ngetGrids@resource://devtools/server/actors/layout.js:448:43\nhandler@resource://devtools/shared/protocol.js:1189:37\nonPacket@resource://devtools/server/main.js:1291:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.warn: "Got an unexpected frameLoad in the inspector, please file a bug on bugzilla.mozilla.org!"
+console.trace: 
+resource://devtools/shared/fronts/inspector.js 346 getMutations/<
+1559910556013	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.8F2rmBv7eA5h"
+1559910556537	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559910556537	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559910556537	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559910559807	Marionette	INFO	Listening on port 45433
+1559910559829	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:17758): dconf-WARNING **: 14:29:22.758: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ehcnqexsuapt67yya4mh2wwgh, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/nrr8oqmv65ug4h6jwhvq5ddp, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/t10dc5jvnnwo9a77z0rj5j93, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ebmeofu01nwon2ll1x8udzo6d, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/7lpssgmoqe12dt6chhxw86ltm, line 2: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/cxbt2c62n60s51783g1exj6ef, line 26: NotFoundError: The operation failed because the requested database object could not be found. For example, an object store did not exist but was being opened.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1559910859000	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Hzn8YW2fHvFB"
+1559910859528	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559910859528	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559910859528	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559910862746	Marionette	INFO	Listening on port 45907
+1559910862811	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:18168): dconf-WARNING **: 14:34:24.279: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/44lpm3xommt4uaobb0rsjjk0w, line 1: ReferenceError: __babelPolyfillDefine is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/cxbt2c62n60s51783g1exj6ef, line 26: NotFoundError: The operation failed because the requested database object could not be found. For example, an object store did not exist but was being opened.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+[Parent 18036, Gecko_IOThread] WARNING: pipe error (86): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 18036, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559910889372	Marionette	INFO	Stopped listening on port 45907
+console.warn: "Error while detaching the thread front: 'detach' request packet to 'server1.conn0.child1/context19' can't be sent as the connection is closed."
+[Parent 17629, Gecko_IOThread] WARNING: pipe error (91): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 17629, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559910896350	Marionette	INFO	Stopped listening on port 45433
+console.warn: "Error while detaching the thread front: 'detach' request packet to 'server1.conn0.child1/context19' can't be sent as the connection is closed."
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Parent 17054, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559910900187	Marionette	INFO	Stopped listening on port 36381
+1559910903260	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.4MNrJn3Vt302"
+1559910903781	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559910903782	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559910903782	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559910907160	Marionette	INFO	Listening on port 42421
+1559910907176	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:18516): dconf-WARNING **: 14:35:08.626: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/cxbt2c62n60s51783g1exj6ef, line 26: NotFoundError: The operation failed because the requested database object could not be found. For example, an object store did not exist but was being opened.
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+JavaScript error: https://static.licdn.com/sc/h/br/9tfzf1lqp8bajtgaz27f4wo8v, line 562: Error: Ember Data Request GET /voyager/api/typeahead/hits returned a 401
+Payload (application/json)
+[object Object]
+[{"status":401}]
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+[Parent 18384, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 18384, Gecko_IOThread] WARNING: pipe error (97): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559910951801	Marionette	INFO	Stopped listening on port 42421
+1559910966587	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.iidh8J5iBt9Q"
+1559910967100	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559910967101	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559910967101	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559910970372	Marionette	INFO	Listening on port 35935
+1559910970399	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:18835): dconf-WARNING **: 14:36:11.915: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+1559910974075	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:223:64
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+[Parent 18706, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 18706, Gecko_IOThread] WARNING: pipe error (94): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559911057370	Marionette	INFO	Stopped listening on port 35935
+1559911057941	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.umB07tN8eCLz"
+1559911058454	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559911058454	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559911058454	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559911062054	Marionette	INFO	Listening on port 45161
+1559911062152	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:19128): dconf-WARNING **: 14:37:44.588: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/cxbt2c62n60s51783g1exj6ef, line 26: NotFoundError: The operation failed because the requested database object could not be found. For example, an object store did not exist but was being opened.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1559911134458	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.aBuDN1YYsbOD"
+1559911134972	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1559911134973	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1559911134973	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1559911138150	Marionette	INFO	Listening on port 37529
+1559911138172	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:19428): dconf-WARNING **: 14:38:59.698: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+1559911141867	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:223:64
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+[Parent 19007, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 19007, Gecko_IOThread] WARNING: pipe error (97): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1559911147646	Marionette	INFO	Stopped listening on port 45161
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559849104725%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1559911175352	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:223:64
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement

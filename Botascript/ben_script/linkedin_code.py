@@ -47,7 +47,9 @@ class Linkedin:
         self.mail = login
         self.password = password
         self.arg = arg
-        self.but = "//*[contains(@class, 'js-discover-person-card__action-btn full-width artdeco-button artdeco-button--2 artdeco-button--full artdeco-button--secondary ember-view')]"
+        self.but = ("//*[contains(@class, 'js-discover-person-card__action-btn"
+                    "full-width artdeco-button artdeco-button--2 artdeco-butto"
+                    "n--full artdeco-button--secondary ember-view')]")
         #print(self.but, "\n" + str(self.but0), "\nEgalité:", self.but == self.but0)
         self.test = 0
         self.count = 0
@@ -219,17 +221,43 @@ class Linkedin:
         C'est complètement une très mauvaise idée de faire par requete http.
         """
 
-        self.driver.get('https://www.linkedin.com/search/results/people/?facetNetwork=["S"]')
-        self.driver.find_element_by_class_name("search-filters-bar__all-filters.flex-shrink-zero.mr3.artdeco-button.artdeco-button--muted.artdeco-button--2.artdeco-button--tertiary.ember-view").click() #filtre
-        formulaire = self.driver.find_elements_by_class_name("ember-text-field.ember-view")
+        self.driver.get('https://www.linkedin.com/search/results/people/?facet'
+                        'Network=["S"]')
+        self.driver.find_element_by_class_name(("search-filters-bar__all-filter"
+                                                "s.flex-shrink-zero.mr3.artdeco"
+                                                "-button.artdeco-button--muted."
+                                                "artdeco-button--2.artdeco-butt"
+                                                "on--tertiary.ember-view")).click() #filtre
+        formulaire = self.driver.find_elements_by_class_name("ember-text-field"
+                                                             ".ember-view")
         inputs = {"relation": formulaire[0], "lieux": formulaire[1],
                   "current_e": formulaire[2], "former_e": formulaire[3],
                   "sector": formulaire[4], "school": formulaire[5]}
 
         for string in inputs:
             self.formulaire(inputs, string)
-        boutton_appliquer_filtre = self.driver.find_element_by_class_name("search-advanced-facets__button--apply.ml4.mr2.artdeco-button.artdeco-button--3.artdeco-button--primary.ember-view")
-        boutton_appliquer_filtre.click()
+        ref = ("search-advanced-facets__button--apply.ml4.mr2.artdeco-button.a"
+               "rtdeco-button--3.artdeco-button--primary.ember-view")
+        boutton_filtre = self.driver.find_element_by_class_name(ref)
+        boutton_filtre.click()
+        sleep(2)
+        ref = ("search-result__action-button.search-result__actions--primary.a"
+               "rtdeco-button.artdeco-button--default.artdeco-button--2.artdec"
+               "o-button--secondary")
+        buttons_connection = self.driver.find_elements_by_class_name(ref)
+        if buttons_connection:
+            for connection in buttons_connection:
+                try:
+                    connection.click()
+                    sleep(1)
+                    self.driver.find_element_by_class_name("artdeco-button.artdeco"
+                                                           "-button--3.ml1").click()
+                except:
+                    self.printer("WARNING:: Failed to get a connection in filt"
+                                 "ered section")
+        else:
+            self.printer("WARNING:: No people to connect resulting from the filtering")
+
 
 # =============================================================================
 # TAG FUNCTION => MAIN
@@ -247,7 +275,7 @@ class Linkedin:
             self.add_specific()
         else:
             self.clicker()
-        self.close()
+        #self.close()
 
     def post(self):
         """
@@ -266,15 +294,13 @@ class Linkedin:
 
 if __name__ == "__main__":
     SESSION = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A",
-                       {"until": 5})
-# =============================================================================
-#                         ,
-#                         "lieux": ["France", "Royaume-uni"],
-#                         "current_e":["bn"],
-#                         "former_e":["societe ge", "rotschild"],
-#                         "sector":["banque"],
-#                         "school":["hec paris", "ICN"]
-# =============================================================================
+                       {"until": 5,
+                        "lieux": ["France", "Royaume-uni"],
+                        "current_e":["bn"],
+                        "former_e":["societe ge", "rotschild"],
+                        "sector":["banque"],
+                        "school":["hec paris", "ICN"]
+                       })
 
     SESSION.add()
     for info in SESSION.log_to_send:
