@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   root to: 'pages#dashboard'
 
+  resources :accounts
+
   # Generic syntax:
   # verb 'path', to: 'controller#action', as: :route_name
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
