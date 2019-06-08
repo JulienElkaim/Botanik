@@ -25,6 +25,9 @@
 @import "components/index";
 @import "pages/index";
 
+// Your CSS by type of item
+@import "accounts";
+
 .overflown{
 	overflow: hidden;
 	text-overflow: ellipsis;

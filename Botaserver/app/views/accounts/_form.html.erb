@@ -1,0 +1,15 @@
+<%= form_for(@account, :html =>{:class => "form-flex-vertical"}) do |f| %>
+  <div>
+  <%= f.label :network_id %>
+  <%= f.collection_select :network_id, Network.order(:network_name), :id, :network_name, include_blank: false %>
+  </div>
+  <div>
+  <%= f.label :network_login %>
+  <%= f.text_field :network_login %>
+  </div>
+  <div>
+  <%= f.label :network_password %>
+  <%= f.password_field :network_password %>
+  </div>
+  <%= f.submit %>
+<% end %>
