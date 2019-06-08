@@ -5,11 +5,11 @@
 		<% @logs.each do |log| %>
 			<%case prefix_of_log(log) %>
 			<% when "SUCCESS"%>
-				<div class="log-success">
+				<div class="log log-success">
 			<% when "WARNING"%>
-				<div class = "log-warning">
+				<div class = "log log-warning">
 			<% when "FAIL"%>
-				<div class = "log-fail">
+				<div class = "log log-fail">
 			<% end %>
 			<%= unprefix_this_log log.message%>
 			</div>

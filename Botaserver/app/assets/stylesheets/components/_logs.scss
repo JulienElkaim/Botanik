@@ -1,0 +1,21 @@
+
+.log{
+	width:100%;
+	opacity:0.4;
+}
+.log-success{
+	background-color: $green;
+	color:$gray;
+
+}
+
+.log-warning{
+	background-color: $yellow;
+	color:$gray;
+	
+}
+
+.log-fail{
+	background-color: $red;
+	color:$gray;
+}
