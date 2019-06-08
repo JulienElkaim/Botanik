@@ -1,13 +1,13 @@
 <div class="card-main">
 	<h1>Mes Éxécutions</h1>
-	<p>Récapitulatif des derniers ordres</p>
+	<p id="log-head-desc">Récapitulatif des derniers ordres</p>
 	
 	<div class= "container-logs" >
 		
 		<% @logs.each do |log| %>
 			<div class="card-log">
 
-				<h3 class= "card-log-title"> Je suis un titre bien trop long pour être bons</h3>
+				<h3 class= "card-log-title"> <%= log.order.title %></h3>
 				<div class= card-log-meta>
 					<div class= card-log-meta-network >
 						<p>
@@ -23,7 +23,7 @@
 							
 						</p>
 					</div>
-					<div class= card-log-meta-network>
+					<div class= card-log-meta-exectime>
 						<p>
 							<%= icon("far", "clock") %>
 							<%= log.exectime %>
@@ -32,30 +32,31 @@
 					
 					
 				</div>
-				<!-- <%= "#{log.order.network.network_name} - #{log.order.order_tag}" %>  -->
-				<p class= "card-log-args"> Paramètres utilisés </p>
+				
 				<h4 class= "card-log-results"> Résultats: </h4>
-				
-				
 				<div class="container-logs-messages">
 					
 					<%log.message.split(";").each do |msg| %>
 
 						<%case prefix_of_log(msg) %>
 							<% when "SUCCESS"%>
-					<div class="log log-success">
+					<div title="<%= unprefix_this_log msg %>" class="log log-success overflown">
 							<% when "WARNING"%>
-					<div class = "log log-warning">
+					<div title="<%= unprefix_this_log msg %>" class = "log log-warning overflown">
 							<% when "FAIL"%>
-					<div class = "log log-fail">
+					<div title="<%= unprefix_this_log msg %>" class = "log log-fail overflown">
 						<% end %>
 
 							<%= unprefix_this_log msg %>
 					</div>
 					<% end %>
 				</div>
-
-				<p class= "card-log-exectime"> Date d'éxécution juste en bas</p>
+				
+				<div class= "card-log-more">
+					<p title="<%= log.order.order_args %>" class= "card-log-more-args overflown">
+						<%= log.order.order_args %> 
+					</p>
+				</div>
 
 			</div>
 

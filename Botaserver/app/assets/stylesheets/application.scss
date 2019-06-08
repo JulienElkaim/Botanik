@@ -24,3 +24,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.overflown{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
