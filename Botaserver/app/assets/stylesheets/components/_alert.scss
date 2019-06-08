@@ -1,6 +1,22 @@
+// .alert {
+//   position: fixed;
+//   bottom: 16px;
+//   right: 16px;
+//   z-index: 1000;
+// }
+
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+	padding: 16px;
+	text-align: center;
+
+}
+
+.alert.alert-info{
+	background-color: #94fc13;
+	color: #032d3c;
+}
+
+.alert.alert-warning{
+	background-color: #ff6337;
+	color: #002f35;
 }

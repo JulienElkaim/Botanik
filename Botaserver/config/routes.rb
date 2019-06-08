@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   
   #get 'users/home'
-  get 'home', to: 'pages#home', as: :home
+  get 'dashboard', to: 'pages#dashboard', as: :home
   get 'autre', to: 'pages#autre', as: :autre
-  root to: 'pages#home'
+  # get 'networks', to: 'networks#index', as: :autre
+  
+  root to: 'pages#dashboard'
 
   # Generic syntax:
   # verb 'path', to: 'controller#action', as: :route_name
