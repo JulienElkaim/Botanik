@@ -1,4 +1,18 @@
 <div class="card-main">
 	<h1>Pages#home</h1>
 	<p>Find me in app/views/pages/home.html.erb</p>
+	<div>
+		<% @logs.each do |log| %>
+			<%case prefix_of_log(log) %>
+			<% when "SUCCESS"%>
+				<div class="log-success">
+			<% when "WARNING"%>
+				<div class = "log-warning">
+			<% when "FAIL"%>
+				<div class = "log-fail">
+			<% end %>
+			<%= unprefix_this_log log.message%>
+			</div>
+		<% end %>
+	</div>	
 </div>
