@@ -1,11 +1,11 @@
 module PagesHelper
 	def prefix_of_log(myLog)
 		
-		if myLog.message.include? "WARNING::"
+		if myLog.include? "WARNING::"
 			return "WARNING"
-		elsif myLog.message.include? "SUCCESS::"
+		elsif myLog.include? "SUCCESS::"
 			return "SUCCESS"
-		elsif myLog.message.include? "FAIL::"
+		elsif myLog.include? "FAIL::"
 			return "FAIL"
 		end
 	end
