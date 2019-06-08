@@ -1,7 +1,7 @@
 <%= form_for(@account, :html =>{:class => "form-flex-vertical"}) do |f| %>
   <div>
   <%= f.label :network_id %>
-  <%= f.collection_select :network_id, Network.order(:network_name), :id, :network_name, include_blank: false %>
+  <%= f.collection_select :network_id, Network.where.not(id: current_user.accounts.map{|account| account.network_id}.to_a).order(:network_name), :id, :network_name, include_blank: false %>
   </div>
   <div>
   <%= f.label :network_login %>

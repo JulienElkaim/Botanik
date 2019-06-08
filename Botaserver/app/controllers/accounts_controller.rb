@@ -16,14 +16,15 @@ class AccountsController < ApplicationController
 	def create
 		tmp_params = account_params
 		tmp_params["user_id"] = current_user.id
-		tmp_params["network_id"] = 3
+		
+		
 
 		@account = Account.new(tmp_params)
 		@account.save
 
 		if !@account.id
 			puts "loooooool"
-			flash[:alert] = "Vous possédez déjà un compte sur ce réseau !"
+			flash[:alert] = "Vous possédez déjà un compte sur #{Network.find(tmp_params["network_id"]).network_name} !"
 			redirect_to "/accounts"
 		else
 			redirect_to account_path(@account)
@@ -38,6 +39,6 @@ class AccountsController < ApplicationController
 	end
 
 	def account_params
-    params.require(:account).permit(:network_login, :network_password)
+    params.require(:account).permit(:network_login, :network_password, :network_id)
   end
 end
