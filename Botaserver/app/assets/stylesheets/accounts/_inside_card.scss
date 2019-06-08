@@ -1,0 +1,41 @@
+.head-desc{
+	font-style: italic;
+	color: rgba(150,150,150,0.5);
+}
+
+.container-accounts{
+	flex:1;
+	width:100%;
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+.container-accounts > *{
+	flex: 0;
+	text-align: center;
+}
+
+.card-account{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 4px 8px;
+
+}
+
+.card-account-meta > *{
+	margin: 0 4px;
+}
+
+.green-text{
+	color: $green;
+}
+
+.red-text{
+	color:$red;
+}
+
+.grey-text{
+	color:rgba(150,150,150,0.7);
+}

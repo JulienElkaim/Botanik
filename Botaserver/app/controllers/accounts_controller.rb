@@ -1,5 +1,8 @@
 class AccountsController < ApplicationController
-	
+
+	def index
+		@accounts = Account.where(user_id: current_user.id)
+	end
 	def new
 		@account = Account.new
 	end
@@ -27,15 +30,33 @@ class AccountsController < ApplicationController
 			flash[:alert] = "Vous possédez déjà un compte sur #{Network.find(tmp_params["network_id"]).network_name} !"
 			redirect_to "/accounts"
 		else
-			redirect_to account_path(@account)
+			redirect_to accounts_path
 		end
 		# Will raise ActiveModel::ForbiddenAttributesError
 	end
 
 	def update
 		@account = Account.find(params[:id])
-		@account.update(params[:account]) unless current_user.id != @account.user_id
+		
+		if current_user.id != @account.user_id
+			flash[:alert] = "Vous ne possédez pas ce compte #{@account.network.network_name}."
+			
+		else
+			@account.update(account_params)
+		end
+		redirect_to accounts_path
 		# Will raise ActiveModel::ForbiddenAttributesError
+	end
+
+	def destroy
+		@account = Account.find(params[:id])
+		if @account.user_id == current_user.id 
+			@account.destroy
+		else
+			flash[:alert] = "Ce compte ne t'appartient pas."
+		end
+
+		redirect_to accounts_path
 	end
 
 	def account_params
