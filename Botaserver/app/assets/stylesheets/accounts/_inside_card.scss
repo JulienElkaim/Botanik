@@ -24,8 +24,13 @@
 
 }
 
-.card-account-meta > *{
-	margin: 0 4px;
+.card-account-meta{
+	display: flex;
+	justify-content: space-around;
+}
+.card-account-meta > *:last-child{
+	margin-left:10px
+	
 }
 
 .green-text{

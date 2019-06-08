@@ -3,6 +3,7 @@
 	width:100%;
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
+
 }
 
 .card-log-title{
@@ -84,4 +85,21 @@
 .card-log:hover .log{
 	color:rgb(0,0,0);
 	opacity: 0.7;
+}
+
+
+@media screen and (max-width: 1200px){
+
+	.container-logs{
+		grid-template-columns: 50% 50%;
+	}
+			
+}
+
+@media screen and (max-width: 800px){
+
+	.container-logs{
+		grid-template-columns: 100%;
+	}
+			
 }
