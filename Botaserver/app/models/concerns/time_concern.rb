@@ -66,6 +66,7 @@ module TimeConcern
 
     	time_word+= "s" if coef != 1
     	
+        puts "======TEST==" + "#{coef} #{time_word}"
     	return "#{coef} #{time_word}"
     	
     end

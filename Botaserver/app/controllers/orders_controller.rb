@@ -7,10 +7,15 @@ class OrdersController < ApplicationController
 	end
 
 	def new
+		redirect_to '/' if !request.referer
+		session[:referrer] = URI.parse(request.referer).path
 		@order = Order.new
 	end
 
 	def create
+
+		source_page = session[:referrer]
+		
 		tmp_params = order_params
 		tmp_params["user_id"] = current_user.id
 		tmp_params["order_args"] = "{}" if tmp_params["order_args"] == ""
@@ -24,7 +29,7 @@ class OrdersController < ApplicationController
 			flash[:alert] = "Vous essayez d'usurper notre système d'enregistrement d'ordre!"
 			redirect_to "/orders"
 		else
-			redirect_to orders_path
+			redirect_to source_page
 		end
 		# Will raise ActiveModel::ForbiddenAttributesError
 	end

@@ -1,3 +1,4 @@
+
 <%= form_for(@order, :html =>{:class => "form-flex-vertical"}) do |f| %>
   
   <div class = "form-header">
@@ -65,7 +66,7 @@
   	"15 semaines",
   	"20 semaines",
 
-  	] %>
+  	], :selected => Order.convertSeconds(@order.intervalle) %>
   </div>
   
   
