@@ -46,8 +46,13 @@ def read(order):
 #         Session.postuler
 # =============================================================================
     #order.log(Session.log_to_send)
-    session.add()
-    session.post()
-    session.postuler()
+    if order.tag == "ADD":
+        session.add()
+    if order.tag == "POST":
+        session.post()
+    if order.tag == "LIKE":
+        session.like()
 
     print(session.log_to_send)
+    for element in session.log_to_send:
+        order.logs(element)

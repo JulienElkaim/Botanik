@@ -137,7 +137,7 @@ class Linkedin:
                     self.printer("WARNING:: Failed to enter '" + str(lieu) +
                                  "' : not in Linkedin database.")
                     inputs[string].clear()
-    
+
     def add_filtered(self, page):
         """
         connect to the result of the page result
@@ -154,16 +154,18 @@ class Linkedin:
                         try:
                             connection.click()
                             sleep(1)
-                            self.driver.find_element_by_class_name("artdeco-button.artdeco"
+                            self.driver.find_element_by_class_name("artdeco-but"
+                                                                   "ton.artdeco"
                                                                    "-button--3.ml1").click()
                             sleep(1)
                         except:
-                            self.printer("WARNING:: Failed to get a connection in filt"
-                                         "ered section")
+                            self.printer("WARNING:: Failed to get a connection"
+                                         "in filtered section")
                     else:
                         print("button non clickable")
             else:
-                self.printer("WARNING:: No people to connect resulting from the filtering")
+                self.printer("WARNING:: No people to connect resulting from th"
+                             "e filtering")
             self.mini_scroll()
 
         url = self.driver.current_url + "&page=" + str(page)
@@ -281,10 +283,30 @@ class Linkedin:
                                                       "ontent/div/div[1]/ul/li"
                                                       "[3]/form/div/fieldset/o"
                                                       "l/li[1]/div/div/input"))
-        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[4]/form/div/fieldset/ol/li[1]/div/div/input"))
-        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[5]/form/div/fieldset/ol/li[1]/div/div/input"))
-        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[6]/form/div/fieldset/ol/li[1]/div/div/input"))
-        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[8]/form/div/fieldset/ol/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artde"
+                                                      "co-modal-overlay/artdec"
+                                                      "o-modal/artdeco-modal-c"
+                                                      "ontent/div/div[1]/ul/li"
+                                                      "[4]/form/div/fieldset/o"
+                                                      "l/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artde"
+                                                      "co-modal-overlay/artdec"
+                                                      "o-modal/artdeco-modal-c"
+                                                      "ontent/div/div[1]/ul/li"
+                                                      "[5]/form/div/fieldset/o"
+                                                      "l/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artde"
+                                                      "co-modal-overlay/artdec"
+                                                      "o-modal/artdeco-modal-c"
+                                                      "ontent/div/div[1]/ul/li"
+                                                      "[6]/form/div/fieldset/o"
+                                                      "l/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artde"
+                                                      "co-modal-overlay/artdec"
+                                                      "o-modal/artdeco-modal-c"
+                                                      "ontent/div/div[1]/ul/li"
+                                                      "[8]/form/div/fieldset/o"
+                                                      "l/li[1]/div/div/input"))
 
         inputs = {"relation": form[0], "lieux": form[1],
                   "current_e": form[2], "former_e": form[3],
@@ -294,11 +316,11 @@ class Linkedin:
             self.formulaire(inputs, string)
 
         ref = ("search-advanced-facets__button--apply.ml4.mr2.artdeco-button.a"
-       "rtdeco-button--3.artdeco-button--primary.ember-view")
+               "rtdeco-button--3.artdeco-button--primary.ember-view")
         boutton_filtre = self.driver.find_element_by_class_name(ref)
         boutton_filtre.click()
         sleep(2)
-        
+
         page = 1
         for _ in range(5):
             self.add_filtered(page)
@@ -313,8 +335,7 @@ class Linkedin:
         Used for order.tad == POST
             arg{message: "post à mettre"}
         """
-        self.login()
-        sleep(5)
+        sleep(3)
         self.driver.find_element_by_class_name("share-box__open.share-box__tri"
                                                "gger.p4.hoverable-link-text.t-"
                                                "16.t-black--light.t-bold").click()
@@ -333,11 +354,10 @@ class Linkedin:
 
     def add(self):
         """
-        Used for order.tag == ADD:
+        Used for order.tag == "ADD":
             - arg{name, number, job, common_friends}
         """
-        self.login()
-        self.page()
+        #self.page()
         if not ((("until" in self.arg) and len(self.arg) == 1)
                 or not self.arg): #not arg == True => arg non vide
             self.add_specific()
@@ -349,30 +369,72 @@ class Linkedin:
 
     def postuler(self):
         """
-        Used for order.tag == POST:
+        Used for order.tag == "POSTING":
             - arg{to set later}
         """
         self.printer("SUCCESS:: TO DO NOT POSTULER")
 
+    def like(self):
+        """
+        used for order.tag == "LIKE":
+            arg{"keyword":"info", "person":"name forname"}
+        """
+
+        if "keyword" not in self.arg:
+            self.arg["keyword"] = ""
+
+        url = ('https://www.linkedin.com/search/results/content/?keywords='
+               + self.arg["keyword"])
+        self.driver.get(url)
+        like = self.driver.find_elements_by_class_name("react-button__trigger.a"
+                                                       "rtdeco-button.artdeco-b"
+                                                       "utton--muted.artdeco-bu"
+                                                       "tton--4.artdeco-button-"
+                                                       "-tertiary.ember-view")
+        for element in like:
+            try:
+                element.click()
+            except:
+                print("beug de merde")
+            self.scroll()
 
 if __name__ == "__main__":
-    SESSION = Linkedin("victor.ben-ami@hotmail.com", "Vo0RdQBkNZrB2usB9Hum",
-                       {"until": 5,
-                        #"lieux": ["France", "Royaume-uni"],
-                        #"current_e":["bn"],
-                        "former_e":["societe ge"],
-                        #"sector":["banque"],
-                        #"school":["hec paris", "ICN"]
-                       })
 # =============================================================================
+#     SESSION = Linkedin("victor.ben-ami@hotmail.com", "Vo0RdQBkNZrB2usB9Hum",
 #                        {"until": 5,
-#                         "lieux": ["France", "Royaume-uni"],
-#                         "current_e":["bn"],
-#                         "former_e":["societe ge", "rotschild"],
-#                         "sector":["banque"],
-#                         "school":["hec paris", "ICN"]
+#                         "message":("It real sent your at. Amounted all shy set"
+#                                    "why followed declared. Repeated of endeavo"
+#                                    "r mr position kindness offering ignorant s"
+#                                    "o up. Simplicity are melancholy preference"
+#                                    "considered saw companions. Disposal on out"
+#                                    "weigh do speedily in on. Him ham although "
+#                                    "thoughts entirely drawings. Acceptance unr"
+#                                    "eserved old admiration projection nay yet "
+#                                    "him. Lasted am so before on esteem vanity "
+#                                    "oh.\nFriendship contrasted solicitude insi"
+#                                    "pidity in introduced literature it. He see"
+#                                    "med denote except as oppose do spring my."),
+#                         #"lieux": ["France", "Royaume-uni"],
+#                         #"current_e":["bn"],
+#                         "former_e":["dior"],
+#                         "keyword":"Artificial Intelligence",
+#                         # sector":["banque"],
+#                         #"school":["hec paris", "ICN"]
 #                        })
+# # =============================================================================
+# #                        {"until": 5,
+# #                         "lieux": ["France", "Royaume-uni"],
+# #                         "current_e":["bn"],
+# #                         "former_e":["societe ge", "rotschild"],
+# #                         "sector":["banque"],
+# #                         "school":["hec paris", "ICN"]
+# #                        })
+# # =============================================================================
+#     SESSION.login()
+#     SESSION.page()
+#     SESSION.add()
+#     SESSION.like()
+#     SESSION.post()
+#     for info in SESSION.log_to_send:
+#         print(info)
 # =============================================================================
-    SESSION.add()
-    for info in SESSION.log_to_send:
-        print(info)

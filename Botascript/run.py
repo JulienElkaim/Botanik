@@ -46,8 +46,12 @@ def dev():
     print("=========== DEVELOPMENT MODE ===========")
 
     for order in orders_to_exec:
-        read(order)
-        break
+        try:
+            read(order)
+            order.logs("SUCCES:: Everything is fine")
+        except:
+            order.logs("ERROR:: Something wen't wrong :/")
+        #break
 
     orders_to_exec.finished() #Ensure to notify database
 
