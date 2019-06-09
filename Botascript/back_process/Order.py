@@ -10,7 +10,11 @@ default_order_log = "[DEFAULT - LOG] Script did not noticed anything."
 class Order:
 
 	def __init__(self, order_data):
-		
+		x = 0
+		for i in order_data:
+				print(x, ":", i)
+				x+=1
+            
 		############### BENJAMIN : Interesting ###############
 		self.tag =			order_data[6]
 		self.args = 		json.loads(order_data[7])

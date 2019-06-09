@@ -1,4 +1,4 @@
-h #!/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jun  2 14:33:59 2019
@@ -18,6 +18,7 @@ ATTENTION A NE PAS METTRE DE ";" DANS LES LOGS
 from ben_script.order_treatment import read
 from back_process.Interface import getFakeDB
 from back_process.Interface import Orders
+from time import sleep
 
 
 #===============/!\ IGNORE IT /!\=======================
@@ -40,6 +41,8 @@ def crash():
 def dev():
     """Developping side of this file"""
     getFakeDB()
+    print("sleep")
+    sleep(2)
     orders_to_exec = Orders()
     orders_to_exec.getWork()
 
@@ -51,7 +54,6 @@ def dev():
             order.logs("SUCCES:: Everything is fine")
         except:
             order.logs("ERROR:: Something wen't wrong :/")
-        #break
 
     orders_to_exec.finished() #Ensure to notify database
 

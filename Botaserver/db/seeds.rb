@@ -52,9 +52,9 @@ Order.create([
 	#Julien veut ajouter 100 personnes, 
 	#toutes les 3 semaines, 
 	#sur LINKEDIN
-	{user_id: 1, title: "Un ordre classique, a exec deux min apres", network_id: 1, intervalle: Order.convertTime("3 heures"), exectime: (Time.now + (2*60*60)+180), endtime: (Time.now + (2*60*60)+180), order_tag: "ADD", order_args: '{"until": 15}'},
-	{user_id: 1, title: "Teste de former_e avec de sogé", network_id: 1, intervalle: Order.convertTime("3 minutes"), exectime: (Time.now + (2*60*60)), endtime: (Time.now + (2*60*60)), order_tag: "ADD", order_args: '{"until": 10, "former_e": ["societe ge"]}'},
-	{user_id: 1, title: "ici on test lieux et former_e ensemble", network_id: 1, intervalle: Order.convertTime("1 heures"), exectime: (Time.now + (2*60*60)), endtime: (Time.now + (2*60*60)), order_tag: "ADD", order_args: '{"until": 10, "lieux": ["France"],"former_e": ["rotschild"]}'}
+	{user_id: 1, title: "Un ordre classique, a exec deux min apres", network_id: 1, intervalle: Order.convertTime("3 heures"), exectime: DateTime.new(2019,6,9,19,47,6), endtime: DateTime.new(2019,6,9,19,47,6), order_tag: "ADD", order_args: '{"until": 15}'},
+	{user_id: 1, title: "Teste de former_e avec de sogé", network_id: 1, intervalle: Order.convertTime("3 minutes"), exectime: DateTime.new(2019,6,9,19,47,6), endtime: DateTime.new(2019,6,9,19,47,6), order_tag: "ADD", order_args: '{"until": 10, "former_e": ["societe ge"]}'},
+	{user_id: 1, title: "ici on test lieux et former_e ensemble", network_id: 1, intervalle: Order.convertTime("1 heures"), exectime: DateTime.new(2019,6,9,19,47,6), endtime: DateTime.new(2019,6,9,19,47,6), order_tag: "ADD", order_args: '{"until": 10, "lieux": ["France"],"former_e": ["rotschild"]}'}
 	#Julien veut liker 50 personnes,
 	#une seule fois,
 	#sur INSTAGRAM

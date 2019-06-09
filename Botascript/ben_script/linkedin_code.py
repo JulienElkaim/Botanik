@@ -398,8 +398,8 @@ class Linkedin:
                 print("beug de merde")
             self.scroll()
 
-if __name__ == "__main__":
 # =============================================================================
+# if __name__ == "__main__":
 #     SESSION = Linkedin("victor.ben-ami@hotmail.com", "Vo0RdQBkNZrB2usB9Hum",
 #                        {"until": 5,
 #                         "message":("It real sent your at. Amounted all shy set"

@@ -36,7 +36,8 @@ def read(order):
 #     else:
 # =============================================================================
     session = Linkedin(order.login, order.password, order.args)
-
+    session.login()
+    session.page()
 # =============================================================================
 #     if(order.tag == "ADD"):
 #         Session.add()
