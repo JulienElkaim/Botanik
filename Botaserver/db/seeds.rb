@@ -77,7 +77,7 @@ Log.create(order_id: 1, exectime: DateTime.new(2000,5,30,4,5,8),  message: "FAIL
 
 Log.create(order_id: 3, exectime: DateTime.new(2000,5,30,4,6,7),  message: "SUCCESS:: Notifie d'un succès;")
 Log.create(order_id: 2, exectime: DateTime.new(2000,5,30,4,6,6),  message: "SUCCESS:: Notifie d'un succès;WARNING:: Notifie d'une anomalie;")
-Log.create(order_id: 3, exectime: DateTime.new(2000,5,30,4,6,8),  message: "FAIL:: Notifie d'un échec dans l'éxécution;")
+Log.create(order_id: 5, exectime: DateTime.new(2000,5,30,4,6,8),  message: "FAIL:: Notifie d'un échec dans l'éxécution;")
 
 
 
