@@ -210,6 +210,7 @@ class Linkedin:
 
         forme des arguments à créer, les chaînes de caractères à gérer doivent
         être précises:
+            - until: int.
             - relation: personnes en relation à une autre
             - lieux[]
             - current_e[]: entreprise actuelle
@@ -263,6 +264,27 @@ class Linkedin:
 # TAG FUNCTION => MAIN
 # =============================================================================
 
+    def post(self):
+        """
+        Used for order.tad == POST
+            arg{message: "post à mettre"}
+        """
+        self.login()
+        sleep(5)
+        self.driver.find_element_by_class_name("share-box__open.share-box__trigger.p4.hoverable-link-text.t-16.t-black--light.t-bold").click()
+        box_to_fill = self.driver.find_element_by_class_name("mentions-textedi"
+                                                             "tor__contentedit"
+                                                             "able.t-18.t-blac"
+                                                             "k--light.t-normal")
+        for line in self.arg["message"].split("\n"):
+            box_to_fill.send_keys(line)
+            box_to_fill.send_keys(Keys.ENTER)
+        self.driver.find_element_by_class_name("share-actions__primary-action."
+                                               "artdeco-button.artdeco-button-"
+                                               "-2.artdeco-button--primary.emb"
+                                               "er-view").click()
+        self.printer("SUCCESS:: TO POST")
+
     def add(self):
         """
         Used for order.tag == ADD:
@@ -277,12 +299,7 @@ class Linkedin:
             self.clicker()
         #self.close()
 
-    def post(self):
-        """
-        Used for order.tag == POST:
-            - arg{to set later}
-        """
-        self.printer("SUCCESS:: TO DO NO POST")
+
 
     def postuler(self):
         """
@@ -293,15 +310,17 @@ class Linkedin:
 
 
 if __name__ == "__main__":
-    SESSION = Linkedin("benjamin.soulan@orange.fr", "InCre3dilB356matdES34A",
-                       {"until": 5,
-                        "lieux": ["France", "Royaume-uni"],
-                        "current_e":["bn"],
-                        "former_e":["societe ge", "rotschild"],
-                        "sector":["banque"],
-                        "school":["hec paris", "ICN"]
-                       })
-
-    SESSION.add()
+    SESSION = Linkedin("vertue_one@outlook.fr", "wCl1l1bPOtNkiCqu2QNA",
+                       {"message":"Ceci est un test\npour se marrer\nc'est bueno."})
+# =============================================================================
+#                        {"until": 5,
+#                         "lieux": ["France", "Royaume-uni"],
+#                         "current_e":["bn"],
+#                         "former_e":["societe ge", "rotschild"],
+#                         "sector":["banque"],
+#                         "school":["hec paris", "ICN"]
+#                        })
+# =============================================================================
+    SESSION.post()
     for info in SESSION.log_to_send:
         print(info)
