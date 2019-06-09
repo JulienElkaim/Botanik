@@ -5,9 +5,15 @@
 	<div class= "container-logs" >
 		
 		<% @orders.each do |order| %>
-			<div class="card-log">
-				<%= link_to "/orders/#{order.id}/edit" do%>
+	
 
+			<div class="card-log">
+				<div>
+					<%= link_to icon("fas", "times-circle", class: "suppr-btn"), order_path(order),
+            method: :delete,
+             data: { confirm: "Are you sure?" } %>
+				<%= link_to "/orders/#{order.id}/edit" do%>
+				</div>
 				<h3 class= "card-log-title"> <%= order.title %></h3>
 				<div class= card-log-meta>
 					
