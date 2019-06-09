@@ -6,10 +6,14 @@ module TimeConcern
 
     def secondConverter(args)
     	#Convert string in integer of seconds
+        if args.downcase.include?("jamais")
+            return 0
+        end
 		pattern = /^(?<time_value>\w+) (?<time_scale>\w+)$/
 		parse_time = args.match(pattern)
 		coef = parse_time[:time_value].to_i
 		scale = parse_time[:time_scale]
+        
 		case scale 
 			when /minute/
 				scale = 1*60
@@ -20,10 +24,10 @@ module TimeConcern
 			when /semaine/, /week/
 				scale = 1*60*60*24*7
 			else
-				scale = 1
+				scale = 2
 		end
-	
-		return coef * scale  
+	       
+		return (coef * scale)
 
     end
 

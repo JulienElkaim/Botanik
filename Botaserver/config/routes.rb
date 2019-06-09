@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   resources :accounts
 
   #Orders objects
-  get '/orders', to: 'orders#index', as: :orders
+  # get '/orders', to: 'orders#index', as: :orders
+  # get '/orders/new', to: 'orders#new', as: :new_order
+  # get '/orders/:id/edit', to: 'orders#edit', as: :edit_order
+  # get '/order/', to: 'orders#show', as: :order
+  # put 'orders/:id', to: 'orders#update'
+  # patch 'orders/:id', to: 'orders#update'
+  resources :orders
 
   # Generic syntax:
   # verb 'path', to: 'controller#action', as: :route_name

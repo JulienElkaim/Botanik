@@ -6,6 +6,7 @@
 		
 		<% @orders.each do |order| %>
 			<div class="card-log">
+				<%= link_to "/orders/#{order.id}/edit" do%>
 
 				<h3 class= "card-log-title"> <%= order.title %></h3>
 				<div class= card-log-meta>
@@ -47,7 +48,7 @@
 				<h4 class= "card-log-results"> Prochaine éxecution: </h4>
 				<div class="container-logs-messages">
 
-					<% remaining_time = Order.convertSeconds(order.exectime - Time.now) %>
+					<% remaining_time = Order.convertSeconds(order.exectime - (Time.now + (60*60*2) ) ) %>
 					<% remaining_time = (remaining_time.include?("Jamais")) ? "Le serveur va procéder à l'éxécution." : remaining_time + " avant éxécution."  %>
 					
 					<% if (remaining_time.include?("Le serveur va procéder") || remaining_time.include?("seconde") ) %>
@@ -71,10 +72,17 @@
 						<%= order.order_args %> 
 					</p>
 				</div>
-
+				<% end %>
 			</div>
 
 		<% end %>
+		
+		<div class="card-order">
+      		<h3 class= "card-account-add">
+        		<%= link_to icon("fas","plus-circle", class: "green-text")  , "/orders/new" %>
+          
+        	</h3>
+    	</div>
 	</div>	
 
 </div>

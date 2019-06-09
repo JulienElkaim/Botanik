@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
 	def index
 		@accounts = Account.where(user_id: current_user.id)
 	end
+	
 	def new
 		@account = Account.new
 	end
@@ -60,6 +61,6 @@ class AccountsController < ApplicationController
 	end
 
 	def account_params
-    params.require(:account).permit(:network_login, :network_password, :network_id)
-  end
+    	params.require(:account).permit(:network_login, :network_password, :network_id)
+  	end
 end
