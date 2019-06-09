@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 		tmp_params = order_params
 		tmp_params["user_id"] = current_user.id
 		tmp_params["order_args"] = "{}" if tmp_params["order_args"] == ""
-		
+		tmp_params[:intervalle] = Order.convertTime(tmp_params[:intervalle])
 
 		@order = Order.new(tmp_params)
 		@order.save
