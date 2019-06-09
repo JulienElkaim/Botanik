@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   resources :accounts
 
+  #Orders objects
+  get '/orders', to: 'orders#index', as: :orders
+
   # Generic syntax:
   # verb 'path', to: 'controller#action', as: :route_name
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

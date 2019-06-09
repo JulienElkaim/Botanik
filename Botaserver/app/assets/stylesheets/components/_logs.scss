@@ -23,9 +23,18 @@
 	color: rgb(150,150,150);
 }
 
+.card-log-meta *.reduced{
+	font-size: 0.7em;
+}
+
 .card-log-meta > *:hover {
 	color:  #032d3c;
 
+}
+
+.card-log-meta > *{
+	margin: 0 4px;
+	flex: auto;
 }
 
 .card-log-more{

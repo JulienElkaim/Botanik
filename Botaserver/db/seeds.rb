@@ -44,25 +44,25 @@ Order.create([
 	#Julien veut ajouter 100 personnes, 
 	#toutes les 3 semaines, 
 	#sur LINKEDIN
-	{user_id: 1, title: "Popu Guy !", network_id: 1, intervalle: Order.convertTime("3 semaines"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2020,5,30,4,5,6), order_tag: "ADD", order_args: '{"until": 100}'},
+	{user_id: 1, title: "Popu Guy !", network_id: 1, intervalle: Order.convertTime("3 semaines"), exectime: DateTime.new(2019,6,9,15,59,59), endtime: DateTime.new(2020,5,30,4,5,6), order_tag: "ADD", order_args: '{"until": 100}'},
 	
 	#Julien veut liker 50 personnes,
 	#une seule fois,
 	#sur INSTAGRAM
-	{user_id: 1, title: "I love you all", network_id: 2, intervalle: 0, exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2019,5,29,4,5,6), order_tag: "LIKE", order_args: '{"Until": 50}'},
+	{user_id: 1, title: "I love you all", network_id: 2, intervalle: 0, exectime: DateTime.new(2019,6,9,10,03,59), endtime: DateTime.new(2019,5,29,4,5,6), order_tag: "LIKE", order_args: '{"Until": 50}'},
 	
 	#Julien veut liker 10 postes,
 	#CONDITION 1 : Créés par des personnes dont la description est exactement "Marketing de réseaux",
 	#CONDITION 2 : Dont le corps de texte contient "Mon cher réseaux",
 	#tous les 3 jours,
 	#sur LINKEDIN
-	{user_id: 1, title:"Relations Marketing de réseaux", network_id: 1, intervalle: Order.convertTime("3 jours"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2019,5,30,4,5,6), order_tag: "LIKE", order_args: '{"Until": 10 ,"Fonction_match": "Marketing de réseaux", "Body_contains": "Mon cher réseaux"}'},
+	{user_id: 1, title:"Relations Marketing de réseaux", network_id: 1, intervalle: Order.convertTime("3 jours"), exectime: DateTime.new(2019,6,10,12,59,59), endtime: DateTime.new(2019,5,30,4,5,6), order_tag: "LIKE", order_args: '{"Until": 10 ,"Fonction_match": "Marketing de réseaux", "Body_contains": "Mon cher réseaux"}'},
 	
 	#Benjamin veut liker 100 photo instagram,
 	#CONDITION 1 : Dont la description contient un des # suivants : #TropPopulaire #PoissonRouge
 	#tous les jours,
 	#sur INSTAGRAM
-	{user_id: 2, title: "Tu m'likes j'te like !", network_id: 2, intervalle: Order.convertTime("1 jour"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2019,6,15,4,5,6), order_tag: "LIKE", order_args: '{"Until": 100 ,"Desc_match_or": ["#TropPopulaire","#PoissonRouge"]}'},
+	{user_id: 2, title: "Tu m'likes j'te like !", network_id: 2, intervalle: Order.convertTime("1 jour"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2019,6,14,4,2,6), order_tag: "LIKE", order_args: '{"Until": 100 ,"Desc_match_or": ["#TropPopulaire","#PoissonRouge"]}'},
 	
 	#Benjamin veut ajouter autant de personnes possible,
 	#toutes les 5 heures,
