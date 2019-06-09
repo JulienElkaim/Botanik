@@ -1,0 +1,18 @@
+<div class="card-uniq-content">
+	<h2 class="mb-4">Forgot your password?</h2>
+
+	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+	  <%= render "devise/shared/error_messages", resource: resource %>
+
+	  <div class="field row justify-content-center">
+	    <%= f.label :email, class: "mr-3" %><br />
+	    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+	  </div>
+
+	  <div class="actions mt-3 mb-4 row justify-content-center">
+	    <%= f.submit "Send instructions" %>
+	  </div>
+	<% end %>
+
+	<%= render "devise/shared/links" %>
+</div>

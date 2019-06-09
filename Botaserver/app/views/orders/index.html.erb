@@ -1,0 +1,95 @@
+<div class="card-main">
+	<h1>Mes Tâches et routines</h1>
+	<p id="log-head-desc">Ordres à venir</p>
+	
+	<div class= "container-logs" >
+		
+		<% @orders.each do |order| %>
+	
+
+			<div class="card-log">
+				<div>
+					<%= link_to icon("fas", "times-circle", class: "suppr-btn"), order_path(order),
+            method: :delete,
+             data: { confirm: "Tu ne pourras pas récupérer l'ordre #{order.title}, es-tu certains de vouloir le supprimer?" } %>
+             	</div>
+				<%= link_to "/orders/#{order.id}/edit" do%>
+				
+				<h3 class= "card-log-title"> <%= order.title %></h3>
+				<div class= card-log-meta>
+					
+					<div class= "card-log-meta-exectime reduced">
+						<p> <%= icon("far", "clock") %> <%= order.exectime.strftime("%d/%m/%Y à %H:%M:%S") %>
+						</p>
+					</div>
+
+					<div class= "card-log-meta-exectime reduced">
+						<p> <%= icon("fas", "calendar-day") %> <%= order.endtime.strftime("%d/%m/%Y à %H:%M:%S") %>
+						</p>
+					</div>
+					<div class= "card-log-meta-exectime reduced">
+						<p> 
+							<%= icon("fas", "hourglass-end") %> <%= Order.convertSeconds(order.intervalle) %>
+						</p>
+					</div>
+					
+					
+				</div>
+				<div class= card-log-meta>
+					<div class= card-log-meta-network >
+						<p>
+							<%= icon("fas", "globe-europe") %>
+							<%= order.network.network_name %>
+							
+						</p>
+					</div>
+					<div class= card-log-meta-tag >
+						<p>
+							<%= icon("fas", "rocket") %>
+							<%= order.order_tag %>
+							
+						</p>
+					</div>
+				</div>
+				
+				<h4 class= "card-log-results"> Prochaine éxecution: </h4>
+				<div class="container-logs-messages">
+
+					<% remaining_time = Order.convertSeconds(order.exectime - (Time.now + (60*60*2) ) ) %>
+					<% remaining_time = (remaining_time.include?("Jamais")) ? "Le serveur va procéder à l'éxécution." : remaining_time + " avant éxécution."  %>
+					
+					<% if (remaining_time.include?("Le serveur va procéder") || remaining_time.include?("seconde") ) %>
+						<div title="<%= unprefix_this_log remaining_time %>" class="log log-fail overflown">
+
+					<% elsif remaining_time.include?("semaine") || remaining_time.include?("jour") || remaining_time.include?("heure")%>
+						<div title="<%= unprefix_this_log remaining_time %>" class="log log-success overflown">
+
+					<% elsif remaining_time.include?("minute") %>
+						<div title="<%= unprefix_this_log remaining_time %>" class = "log log-warning overflown">
+
+					<% end %>
+					
+							<%= remaining_time %>
+						</div>
+					
+				</div>
+				
+				<div class= "card-log-more">
+					<p title="<%= order.order_args %>" class= "card-log-more-args overflown">
+						<%= order.order_args %> 
+					</p>
+				</div>
+				<% end %>
+			</div>
+
+		<% end %>
+		
+		<div class="card-order card-add">
+      		<h3 class= "card-account-add">
+        		<%= link_to icon("fas","plus-circle", class: "green-text")  , "/orders/new" %>
+          
+        	</h3>
+    	</div>
+	</div>	
+
+</div>

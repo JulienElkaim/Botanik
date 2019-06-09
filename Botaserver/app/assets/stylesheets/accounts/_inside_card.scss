@@ -1,0 +1,49 @@
+.head-desc{
+	font-style: italic;
+	color: rgba(150,150,150,0.5);
+}
+
+.container-accounts{
+	flex:1;
+	width:100%;
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+.container-accounts > *{
+	flex: 0;
+	text-align: center;
+}
+
+.card-account{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 4px 8px;
+
+}
+.card-account i:hover:not(.red-text){
+	color: rgba(100,100,100,0.9);
+}
+
+.card-account-meta{
+	display: flex;
+	justify-content: space-around;
+}
+.card-account-meta > *:last-child{
+	margin-left:10px
+	
+}
+
+.green-text{
+	color: $green;
+}
+
+.red-text{
+	color:$red;
+}
+
+.grey-text{
+	color:rgba(150,150,150,0.7);
+}

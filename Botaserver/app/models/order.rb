@@ -7,4 +7,8 @@ class Order < ApplicationRecord
   def self.convertTime(arg)
   	return Time::secondConverter(arg)
   end
+
+  def self.convertSeconds(arg)
+  	return Time::integerConverter(arg)
+  end
 end

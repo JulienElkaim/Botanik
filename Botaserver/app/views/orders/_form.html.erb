@@ -1,0 +1,75 @@
+
+<%= form_for(@order, :html =>{:class => "form-flex-vertical"}) do |f| %>
+  
+  <div class = "form-header">
+  <%= f.label :title, "Nom de l'ordre :" %>
+  <%= f.text_field :title, placeholder: "Un nom qui pète..." %>
+  </div>
+  <div>
+  <%= f.label :network_id, "Réseaux :" %>
+  <%= f.collection_select :network_id, Network.order(:network_name), :id, :network_name, include_blank: false %>
+  </div>
+  <div>
+  <%= f.label :order_tag, "Action :" %>
+  <%= f.select :order_tag, ["ADD","LIKE"] %>
+  </div>
+  <div>
+  <%= f.label :order_args, "Arguments :" %>
+  <%= f.text_field :order_args, placeholder: "Facultatif..." %>
+  </div>
+  <h4>
+  	Gestion du temps
+  </h4>
+  <div>
+  <%= f.label :exectime, "Prochaine éxécution :" %>
+  <%= f.datetime_local_field :exectime, value: Time.now.strftime("%Y-%m-%dT%H:%M") %>
+  </div>
+  <div>
+  <%= f.label :endtime, "Date d'expiration :" %>
+  <%= f.datetime_local_field :endtime, value: Time.now.strftime("%Y-%m-%dT%H:%M") %>
+  </div>
+  <div>
+ <%= f.label :intervalle, "Répétition tous les :" %>
+  <%= f.select :intervalle, [
+  	"Jamais",
+  	"10 minutes",
+  	"20 minutes",
+  	"30 minutes",
+  	"45 minutes",
+  	"1 heure",
+  	"2 heures",
+  	"3 heures",
+  	"4 heures",
+  	"5 heures",
+  	"6 heures",
+  	"7 heures",
+  	"8 heures",
+  	"9 heures",
+  	"10 heures",
+  	"11 heures",
+  	"12 heures",
+  	"15 heures",
+  	"20 heures",
+  	"1 jour",
+  	"2 jours",
+  	"3 jours",
+  	"4 jours",
+  	"5 jours",
+  	"6 jours",
+  	"1 semaine",
+  	"2 semaines",
+  	"3 semaines",
+  	"4 semaines",
+  	"5 semaines",
+  	"6 semaines",
+  	"10 semaines",
+  	"15 semaines",
+  	"20 semaines",
+
+  	], :selected => Order.convertSeconds(@order.intervalle) %>
+  </div>
+  
+  
+  <%= f.submit %>
+
+<% end %>

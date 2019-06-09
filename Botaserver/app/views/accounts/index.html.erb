@@ -1,0 +1,35 @@
+<div class="card-main">
+  <h1>Mes Réseaux</h1>
+  <p class="head-desc">Liste des réseaux existants</p>
+  
+  <div class= "container-accounts" >
+    
+    <% @accounts.each do |account| %>
+      
+        <div class="card-account">
+          <%= link_to "/accounts/#{account.id}/edit" do%>
+          <h3 class= "card-account-icon"> <%= icon("fab", account.network.network_name.downcase, class: "grey-text") %> </h3>
+          <div class= card-account-meta>
+            <%= link_to icon("fas", "magic", class: "grey-text") ,"/accounts/#{account.id}/edit"%>
+
+            <%= link_to icon("fas", "times-circle", class: "red-text"), account_path(account),
+            method: :delete,
+             data: { confirm: "Are you sure?" } %>
+            
+                
+          </div>
+        
+         <% end %>
+        </div>
+
+     
+    <% end %>
+    <div class="card-account">
+      <h3 class= "card-account-add">
+        <%= link_to icon("fas","plus-circle", class: "green-text")  , "/accounts/new" %>
+          
+        </h3>
+    </div>
+  </div>  
+
+</div>

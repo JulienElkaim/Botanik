@@ -1,0 +1,13 @@
+.form-flex-vertical{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 16px 0;
+
+}
+
+.form-flex-vertical > div{
+	margin:4px 0;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
