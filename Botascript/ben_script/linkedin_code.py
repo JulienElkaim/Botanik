@@ -82,6 +82,11 @@ class Linkedin:
                 break
             last_height = new_height
 
+    def mini_scroll(self):
+        """Scroll less than scroll function does"""
+        # Get scroll height
+        self.driver.execute_script("window.scrollBy(0,200)")
+
     def find_connecter(self):
         """Set driver ready to click on 'se connecter' button"""
         try:
@@ -124,13 +129,46 @@ class Linkedin:
             for lieu in self.arg[string]:
                 inputs[string].clear()
                 inputs[string].send_keys(lieu)
-                sleep(2)
+                sleep(1)
                 try:
+                    inputs[string].send_keys(Keys.DOWN)
                     inputs[string].send_keys(Keys.ENTER)
                 except:
                     self.printer("WARNING:: Failed to enter '" + str(lieu) +
                                  "' : not in Linkedin database.")
                     inputs[string].clear()
+    
+    def add_filtered(self, page):
+        """
+        connect to the result of the page result
+        """
+        ref = ("search-result__action-button.search-result__actions--primary.a"
+               "rtdeco-button.artdeco-button--default.artdeco-button--2.artdec"
+               "o-button--secondary")
+        for _ in range(5):
+            buttons_connection = self.driver.find_elements_by_class_name(ref)
+            if buttons_connection:
+                for connection in buttons_connection:
+                    if connection.is_enabled():
+                        print("button clickable")
+                        try:
+                            connection.click()
+                            sleep(1)
+                            self.driver.find_element_by_class_name("artdeco-button.artdeco"
+                                                                   "-button--3.ml1").click()
+                            sleep(1)
+                        except:
+                            self.printer("WARNING:: Failed to get a connection in filt"
+                                         "ered section")
+                    else:
+                        print("button non clickable")
+            else:
+                self.printer("WARNING:: No people to connect resulting from the filtering")
+            self.mini_scroll()
+
+        url = self.driver.current_url + "&page=" + str(page)
+        print(url)
+        self.driver.get(url)
 
 
 # =============================================================================
@@ -229,36 +267,42 @@ class Linkedin:
                                                 "-button.artdeco-button--muted."
                                                 "artdeco-button--2.artdeco-butt"
                                                 "on--tertiary.ember-view")).click() #filtre
-        formulaire = self.driver.find_elements_by_class_name("ember-text-field"
-                                                             ".ember-view")
-        inputs = {"relation": formulaire[0], "lieux": formulaire[1],
-                  "current_e": formulaire[2], "former_e": formulaire[3],
-                  "sector": formulaire[4], "school": formulaire[5]}
+
+        form = []
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artde"
+                                                      "co-modal-overlay/artdec"
+                                                      "o-modal/artdeco-modal-c"
+                                                      "ontent/div/div[1]/ul/li"
+                                                      "[2]/form/div/fieldset/o"
+                                                      "l/li/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artde"
+                                                      "co-modal-overlay/artdec"
+                                                      "o-modal/artdeco-modal-c"
+                                                      "ontent/div/div[1]/ul/li"
+                                                      "[3]/form/div/fieldset/o"
+                                                      "l/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[4]/form/div/fieldset/ol/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[5]/form/div/fieldset/ol/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[6]/form/div/fieldset/ol/li[1]/div/div/input"))
+        form.append(self.driver.find_element_by_xpath("/html/body/div[3]/artdeco-modal-overlay/artdeco-modal/artdeco-modal-content/div/div[1]/ul/li[8]/form/div/fieldset/ol/li[1]/div/div/input"))
+
+        inputs = {"relation": form[0], "lieux": form[1],
+                  "current_e": form[2], "former_e": form[3],
+                  "sector": form[4], "school": form[5]}
 
         for string in inputs:
             self.formulaire(inputs, string)
+
         ref = ("search-advanced-facets__button--apply.ml4.mr2.artdeco-button.a"
-               "rtdeco-button--3.artdeco-button--primary.ember-view")
+       "rtdeco-button--3.artdeco-button--primary.ember-view")
         boutton_filtre = self.driver.find_element_by_class_name(ref)
         boutton_filtre.click()
         sleep(2)
-        ref = ("search-result__action-button.search-result__actions--primary.a"
-               "rtdeco-button.artdeco-button--default.artdeco-button--2.artdec"
-               "o-button--secondary")
-        buttons_connection = self.driver.find_elements_by_class_name(ref)
-        if buttons_connection:
-            for connection in buttons_connection:
-                try:
-                    connection.click()
-                    sleep(1)
-                    self.driver.find_element_by_class_name("artdeco-button.artdeco"
-                                                           "-button--3.ml1").click()
-                except:
-                    self.printer("WARNING:: Failed to get a connection in filt"
-                                 "ered section")
-        else:
-            self.printer("WARNING:: No people to connect resulting from the filtering")
-
+        
+        page = 1
+        for _ in range(5):
+            self.add_filtered(page)
+            page += 1
 
 # =============================================================================
 # TAG FUNCTION => MAIN
@@ -271,7 +315,9 @@ class Linkedin:
         """
         self.login()
         sleep(5)
-        self.driver.find_element_by_class_name("share-box__open.share-box__trigger.p4.hoverable-link-text.t-16.t-black--light.t-bold").click()
+        self.driver.find_element_by_class_name("share-box__open.share-box__tri"
+                                               "gger.p4.hoverable-link-text.t-"
+                                               "16.t-black--light.t-bold").click()
         box_to_fill = self.driver.find_element_by_class_name("mentions-textedi"
                                                              "tor__contentedit"
                                                              "able.t-18.t-blac"
@@ -310,8 +356,14 @@ class Linkedin:
 
 
 if __name__ == "__main__":
-    SESSION = Linkedin("vertue_one@outlook.fr", "wCl1l1bPOtNkiCqu2QNA",
-                       {"message":"Ceci est un test\npour se marrer\nc'est bueno."})
+    SESSION = Linkedin("victor.ben-ami@hotmail.com", "Vo0RdQBkNZrB2usB9Hum",
+                       {"until": 5,
+                        #"lieux": ["France", "Royaume-uni"],
+                        #"current_e":["bn"],
+                        "former_e":["societe ge"],
+                        #"sector":["banque"],
+                        #"school":["hec paris", "ICN"]
+                       })
 # =============================================================================
 #                        {"until": 5,
 #                         "lieux": ["France", "Royaume-uni"],
@@ -321,6 +373,6 @@ if __name__ == "__main__":
 #                         "school":["hec paris", "ICN"]
 #                        })
 # =============================================================================
-    SESSION.post()
+    SESSION.add()
     for info in SESSION.log_to_send:
         print(info)
