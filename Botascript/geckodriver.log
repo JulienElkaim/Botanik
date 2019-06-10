@@ -616,3 +616,508 @@ JavaScript error: chrome://browser/content/browser-customization.js, line 167: N
 [Parent 9259, Gecko_IOThread] WARNING: pipe error (61): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
 [Parent 9259, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
 1560103128888	Marionette	INFO	Stopped listening on port 46123
+1560103839454	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.fvDxSmS1FhCF"
+1560103839929	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560103839930	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560103839930	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560103842956	Marionette	INFO	Listening on port 43923
+1560103842997	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:12056): dconf-WARNING **: 20:10:44.549: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560103867211	Marionette	INFO	Stopped listening on port 43923
+[Parent 11921, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+1560103868907	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.fOqZKSzDflli"
+1560103869412	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560103869412	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560103869412	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560103872476	Marionette	INFO	Listening on port 42389
+1560103872529	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:12361): dconf-WARNING **: 20:11:14.112: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 5295: Error: {"readyState":0,"status":0,"statusText":"error"}
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+1560103895954	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.G094jSSEEpki"
+[Parent 12219, Gecko_IOThread] WARNING: pipe error (97): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 12219, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560103896460	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560103896461	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560103896461	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560103896790	Marionette	INFO	Stopped listening on port 42389
+1560103899548	Marionette	INFO	Listening on port 36949
+1560103899569	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:12651): dconf-WARNING **: 20:11:41.085: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ehcnqexsuapt67yya4mh2wwgh, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/nrr8oqmv65ug4h6jwhvq5ddp, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/t10dc5jvnnwo9a77z0rj5j93, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ebmeofu01nwon2ll1x8udzo6d, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/7lpssgmoqe12dt6chhxw86ltm, line 2: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560103942492	Marionette	INFO	Stopped listening on port 36949
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+[Parent 12519, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560154136820	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.CWcVP2Ry1L3v"
+1560154137783	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560154137784	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560154137784	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560154141628	Marionette	INFO	Listening on port 45969
+1560154141664	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:5267): dconf-WARNING **: 10:09:05.094: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560154166600	Marionette	INFO	Stopped listening on port 45969
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+[Parent 5080, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560154167867	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Wo18jcmOVeiN"
+1560154168340	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560154168340	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560154168341	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560154171524	Marionette	INFO	Listening on port 45561
+1560154171578	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:5631): dconf-WARNING **: 10:09:32.954: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 5295: Error: {"readyState":0,"status":0,"statusText":"error"}
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+[Parent 5495, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+1560154203687	Marionette	INFO	Stopped listening on port 45561
+1560154429284	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.QRJbgP06RxkO"
+1560154429782	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560154429783	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560154429783	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560154432808	Marionette	INFO	Listening on port 44991
+1560154432898	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:6014): dconf-WARNING **: 10:13:54.453: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ehcnqexsuapt67yya4mh2wwgh, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/nrr8oqmv65ug4h6jwhvq5ddp, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/t10dc5jvnnwo9a77z0rj5j93, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ebmeofu01nwon2ll1x8udzo6d, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/7lpssgmoqe12dt6chhxw86ltm, line 2: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+[Child 6014, Chrome_ChildThread] WARNING: pipe error (3): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560154441703	Marionette	INFO	Stopped listening on port 44991
+1560154441796	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.t07ODEZIz0hY"
+1560154442284	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560154442284	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560154442285	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560154445294	Marionette	INFO	Listening on port 36561
+1560154445306	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:6304): dconf-WARNING **: 10:14:06.747: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 5295: Error: {"readyState":0,"status":0,"statusText":"error"}
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560154468201	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.eEnpNqL70L34"
+[Parent 6175, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 6175, Gecko_IOThread] WARNING: pipe error (86): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 6175, Gecko_IOThread] WARNING: pipe error (99): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560154468709	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560154468710	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560154468710	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560154469112	Marionette	INFO	Stopped listening on port 36561
+1560154471975	Marionette	INFO	Listening on port 37359
+1560154472013	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:6593): dconf-WARNING **: 10:14:33.454: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560154476171	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:223:64
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript error: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 5295: Error: {"readyState":0,"status":0,"statusText":"error"}
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+[Parent 6459, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 6459, Gecko_IOThread] WARNING: pipe error (97): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560154488760	Marionette	INFO	Stopped listening on port 37359
+1560156390476	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.fRcFANqDcNlS"
+1560156390962	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156390963	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156390963	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560156394008	Marionette	INFO	Listening on port 42867
+1560156394086	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:7309): dconf-WARNING **: 10:46:35.572: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+1560156396113	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.EFXw28XIrHap"
+1560156396622	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156396622	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156396622	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560156400604	Marionette	INFO	Listening on port 46441
+1560156400624	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 7178, Gecko_IOThread] WARNING: pipe error: Relais brisé (pipe): file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+
+(/usr/lib/firefox/firefox:7561): dconf-WARNING **: 10:46:43.133: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+1560156403660	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.IC1eDzXGr9KM"
+1560156404226	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156404227	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156404227	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560156408503	Marionette	INFO	Listening on port 41999
+1560156408579	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:7848): dconf-WARNING **: 10:46:51.176: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+[Parent 7429, Gecko_IOThread] WARNING: pipe error: Relais brisé (pipe): file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+[Parent 7711, Gecko_IOThread] WARNING: pipe error: Relais brisé (pipe): file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript error: resource://gre/modules/WebProgressChild.jsm, line 61: TypeError: this.mm.content is null
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+[Parent 7711, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 7711, Gecko_IOThread] WARNING: pipe error (60): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+[Parent 7429, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 7429, Gecko_IOThread] WARNING: pipe error (86): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560156435314	Marionette	INFO	Stopped listening on port 41999
+1560156435864	Marionette	INFO	Stopped listening on port 46441
+JavaScript error: chrome://browser/content/browser-customization.js, line 167: NS_ERROR_NOT_INITIALIZED: 
+[Parent 7178, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 7178, Gecko_IOThread] WARNING: pipe error (86): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560156436789	Marionette	INFO	Stopped listening on port 42867
+1560156674444	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.xUbuvHroBeT1"
+1560156674938	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156674938	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156674939	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560156677965	Marionette	INFO	Listening on port 40605
+1560156678056	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:8269): dconf-WARNING **: 10:51:19.453: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560156699952	Marionette	INFO	Stopped listening on port 40605
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Child 8269, Chrome_ChildThread] WARNING: pipe error (3): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+[Parent 8132, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560156701120	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.hzVfmx9C0PSc"
+1560156701608	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156701608	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156701608	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560156704495	Marionette	INFO	Listening on port 40013
+1560156704545	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:8554): dconf-WARNING **: 10:51:45.878: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560156722878	Marionette	INFO	Stopped listening on port 40013
+[Parent 8428, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560156724017	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.XV2BBxUWNOzl"
+1560156724506	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156724507	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156724507	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560156727502	Marionette	INFO	Listening on port 38469
+1560156727539	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:8845): dconf-WARNING **: 10:52:08.972: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560156749143	Marionette	INFO	Stopped listening on port 38469
+[Parent 8713, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560156933497	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.IM0kKi2BnXH1"
+1560156933996	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156933997	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156933997	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560156937121	Marionette	INFO	Listening on port 40485
+1560156937211	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:9200): dconf-WARNING **: 10:55:39.124: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ehcnqexsuapt67yya4mh2wwgh, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/nrr8oqmv65ug4h6jwhvq5ddp, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/t10dc5jvnnwo9a77z0rj5j93, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ebmeofu01nwon2ll1x8udzo6d, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/7lpssgmoqe12dt6chhxw86ltm, line 2: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560156957410	Marionette	INFO	Stopped listening on port 40485
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+[Parent 9077, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560156958650	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.9hlY6gguRltu"
+1560156959136	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156959136	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156959136	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560156962056	Marionette	INFO	Listening on port 44187
+1560156962105	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:9490): dconf-WARNING **: 10:56:03.895: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560156980024	Marionette	INFO	Stopped listening on port 44187
+[Parent 9362, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Child 9490, Chrome_ChildThread] WARNING: pipe error: Relais brisé (pipe): file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+[Child 9490, Chrome_ChildThread] WARNING: pipe error: Relais brisé (pipe): file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+1560156981166	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.1j8ebEgsTeyh"
+1560156981652	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560156981652	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560156981652	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560156984636	Marionette	INFO	Listening on port 39683
+1560156984677	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:9786): dconf-WARNING **: 10:56:26.200: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ehcnqexsuapt67yya4mh2wwgh, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/nrr8oqmv65ug4h6jwhvq5ddp, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/t10dc5jvnnwo9a77z0rj5j93, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ebmeofu01nwon2ll1x8udzo6d, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/7lpssgmoqe12dt6chhxw86ltm, line 2: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560157829945	Marionette	INFO	Stopped listening on port 39683
+[Parent 9651, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560157938964	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.GaFcCaeRijbj"
+1560157939487	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560157939487	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560157939487	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560157942542	Marionette	INFO	Listening on port 34833
+1560157942581	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:14561): dconf-WARNING **: 11:12:24.024: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ehcnqexsuapt67yya4mh2wwgh, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/nrr8oqmv65ug4h6jwhvq5ddp, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/t10dc5jvnnwo9a77z0rj5j93, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/ebmeofu01nwon2ll1x8udzo6d, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/7lpssgmoqe12dt6chhxw86ltm, line 2: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560157963100	Marionette	INFO	Stopped listening on port 34833
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+[Parent 14438, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560157964244	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.StYMM5i7CQmI"
+1560157964789	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560157964790	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560157964790	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560157968140	Marionette	INFO	Listening on port 35071
+1560157968156	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:14862): dconf-WARNING **: 11:12:50.589: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560157987266	Marionette	INFO	Stopped listening on port 35071
+[Parent 14722, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560157988406	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.LVEbzuJDpGlL"
+1560157988942	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560157988942	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560157988942	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560157992214	Marionette	INFO	Listening on port 36791
+1560157992319	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:15158): dconf-WARNING **: 11:13:13.854: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560158011469	Marionette	INFO	Stopped listening on port 36791
+[Parent 15027, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560158103406	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.CLkrpIi21iW3"
+1560158103936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560158103936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560158103936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560158107058	Marionette	INFO	Listening on port 35859
+1560158107116	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:15515): dconf-WARNING **: 11:15:08.553: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript error: , line 0: uncaught exception: AbortError: Aborted
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+1560158128174	Marionette	INFO	Stopped listening on port 35859
+[Parent 15383, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+1560158129317	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.mCUlJjJkyChJ"
+1560158129841	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560158129842	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560158129842	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560158132958	Marionette	INFO	Listening on port 33881
+1560158133027	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:15815): dconf-WARNING **: 11:15:34.970: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript error: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 5295: Error: {"readyState":0,"status":0,"statusText":"error"}
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560158160030	Marionette	INFO	Stopped listening on port 33881
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+[Parent 15679, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1560158161243	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ya9pAcpsvyOL"
+1560158161756	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560158161757	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560158161757	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560158164860	Marionette	INFO	Listening on port 42085
+1560158164955	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:16113): dconf-WARNING **: 11:16:06.415: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission non accordée
+JavaScript error: https://static.licdn.com/sc/h/br/b9l0fk2r6s9t9i0tp5vrk0vdh, line 6: ReferenceError: t8 is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/5jxacv2jvkx13clwtfovwapox, line 1: ReferenceError: define is not defined
+JavaScript error: https://static.licdn.com/sc/h/br/3ib3oo9nn02et9ysk4bngvo20, line 1: ReferenceError: define is not defined
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221559865839282%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
+
+JavaScript warning: https://static.licdn.com/sc/h/br/br5327i9hgtilu8fd4j4tjynx, line 7553: unreachable code after return statement
+1560158189688	Marionette	INFO	Stopped listening on port 42085
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000D,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Closed channel: cannot send/recv
+
+[Parent 15986, Gecko_IOThread] WARNING: pipe error (80): Connexion ré-initialisée par le correspondant: file /build/firefox-gHMaBx/firefox-67.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357

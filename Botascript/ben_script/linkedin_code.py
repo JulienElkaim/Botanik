@@ -7,6 +7,7 @@ Code bot Linkedin
 # IMPORTING
 # =============================================================================
 
+import sys
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -28,16 +29,16 @@ class Linkedin:
     Class to control the bot
     form of arguments:
         - login: mail.
-        - pwd: pwd.
+        - password: pwd.
         - arg: {
                 "until" : 15,
                 "name": ["str","ings"],
                 "job": ["policeman", "farmer"],
                 "school": ["HEC Paris", "ICN BS"]
                 "places": ["city", "country"],
-                "firms": ["Google", "Amazon"],
-                "qualifications": ["internship","Degree","Senior"],
-                "common_friends": ["MIN"/"MAX", int]
+                "current_e": ["Google", "Amazon"],
+                "former_e": ["Google", "Amazon"],
+                "message" : "long string"
                 }
 
     """
@@ -47,18 +48,16 @@ class Linkedin:
         self.mail = login
         self.password = password
         self.arg = arg
-        self.but = ("//*[contains(@class, 'js-discover-person-card__action-btn"
-                    "full-width artdeco-button artdeco-button--2 artdeco-butto"
-                    "n--full artdeco-button--secondary ember-view')]")
-        #print(self.but, "\n" + str(self.but0), "\nEgalité:", self.but == self.but0)
+
         self.test = 0
-        self.count = 0
-        self.connecter = True
-        self.connection = True
+#Any try to add is taken in count so even if first one doesn't work it will increment
+        self.count = -1
+        self.log_to_send = []
 
         print("Argument(s) recieved:", self.arg)
 
-        self.log_to_send = []
+        self.login()
+        self.page()
 
 # =============================================================================
 # Fonctions for others
@@ -86,25 +85,6 @@ class Linkedin:
         """Scroll less than scroll function does"""
         # Get scroll height
         self.driver.execute_script("window.scrollBy(0,200)")
-
-    def find_connecter(self):
-        """Set driver ready to click on 'se connecter' button"""
-        try:
-            self.connecter = self.driver.find_element_by_xpath(self.but)
-        except:
-            #logger.error("Fail to select connection button: " + str(e))
-            print("Failed to select connection button")
-
-    def clickeur(self):
-        """Count successful connection(s) or refresh page"""
-        try:
-            self.connecter.click()
-            #print(self.count, "Everything is fine")
-            self.count += 1
-        except:
-            #logger.error("Failed to click: " + str(e))
-            #print("Failed to click")
-            self.test += 1
 
     def until_limit(self):
         """
@@ -150,7 +130,6 @@ class Linkedin:
             if buttons_connection:
                 for connection in buttons_connection:
                     if connection.is_enabled():
-                        print("button clickable")
                         try:
                             connection.click()
                             sleep(1)
@@ -158,18 +137,15 @@ class Linkedin:
                                                                    "ton.artdeco"
                                                                    "-button--3.ml1").click()
                             sleep(1)
+                            self.count += 1
                         except:
-                            self.printer("WARNING:: Failed to get a connection"
-                                         "in filtered section")
-                    else:
-                        print("button non clickable")
+                            print("Failed to connect")
             else:
                 self.printer("WARNING:: No people to connect resulting from th"
                              "e filtering")
             self.mini_scroll()
 
         url = self.driver.current_url + "&page=" + str(page)
-        print(url)
         self.driver.get(url)
 
 
@@ -192,10 +168,14 @@ class Linkedin:
 
     def page(self):
         """Try to connect to the network page"""
-        while self.connection:
+        if "Security" in self.driver.title:
+            self.printer("ERROR:: Linkedin Security check, order aborted")
+            sys.exit()
+        connect = True
+        while connect:
             try:
                 self.driver.find_element_by_id("mynetwork-nav-item").click()
-                self.connection = False
+                connect = False
             except:
                 sleep(0.5)
 
@@ -204,23 +184,30 @@ class Linkedin:
         Try to click on everyone, reload
         at most LOOPS times before stopping
         """
-        self.count -= 1
+        selection_issue = False
 
-        while(self.connecter and self.test < LOOPS):
+        while self.test < LOOPS:
             self.scroll()
             sleep(0.5)
-
             for _ in range(50):
                 if self.test > LOOPS:
                     break
-
-                self.find_connecter()
-                self.clickeur()
+                but = ("js-discover-person-card__action-btn.full-width.artdeco-b"
+                       "utton.artdeco-button--2.artdeco-button--full.artdeco-but"
+                       "ton--secondary.ember-view")
+                try:
+                    connecter = self.driver.find_element_by_class_name(but)
+                except:
+                    selection_issue = True
+                try:
+                    connecter.click()
+                    self.count += 1
+                except:
+                    self.test += 1
                 self.until_limit()
-
             self.driver.refresh()
-
-        self.printer("SUCCESS:: Number of connection(s) added: " + str(self.count))
+        if selection_issue:
+            self.printer("WARNING:: Some connection button, where disabled")
 
     def close(self):
         """Close the driver"""
@@ -322,13 +309,27 @@ class Linkedin:
         sleep(2)
 
         page = 1
-        for _ in range(5):
+        objectif = 50
+        if "until" in self.arg:
+            objectif = self.arg["until"]
+        for _ in range(int(objectif/10)):
             self.add_filtered(page)
             page += 1
 
 # =============================================================================
 # TAG FUNCTION => MAIN
 # =============================================================================
+    def add(self):
+        """
+        Used for order.tag == "ADD":
+            - arg{until, name, number, job, common_friends}
+        """
+        if not ((("until" in self.arg) and len(self.arg) == 1)
+                or not self.arg): #not arg == True => arg non vide
+            self.add_specific()
+        else:
+            self.clicker()
+        self.printer("SUCCESS:: Number of connection(s) added: " + str(self.count))
 
     def post(self):
         """
@@ -350,29 +351,7 @@ class Linkedin:
                                                "artdeco-button.artdeco-button-"
                                                "-2.artdeco-button--primary.emb"
                                                "er-view").click()
-        self.printer("SUCCESS:: TO POST")
-
-    def add(self):
-        """
-        Used for order.tag == "ADD":
-            - arg{name, number, job, common_friends}
-        """
-        #self.page()
-        if not ((("until" in self.arg) and len(self.arg) == 1)
-                or not self.arg): #not arg == True => arg non vide
-            self.add_specific()
-        else:
-            self.clicker()
-        #self.close()
-
-
-
-    def postuler(self):
-        """
-        Used for order.tag == "POSTING":
-            - arg{to set later}
-        """
-        self.printer("SUCCESS:: TO DO NOT POSTULER")
+        self.printer("SUCCESS:: message posted")
 
     def like(self):
         """
@@ -397,27 +376,37 @@ class Linkedin:
             except:
                 print("beug de merde")
             self.scroll()
+        self.printer("SUCCESS:: Some likes where made")
+
+    def postuler(self):
+        """
+        Used for order.tag == "POSTING":
+            - arg{to set later}
+        """
+        self.printer("SUCCESS:: TO DO NOT POSTULER")
 
 # =============================================================================
 # if __name__ == "__main__":
 #     SESSION = Linkedin("victor.ben-ami@hotmail.com", "Vo0RdQBkNZrB2usB9Hum",
 #                        {"until": 5,
-#                         "message":("It real sent your at. Amounted all shy set"
-#                                    "why followed declared. Repeated of endeavo"
-#                                    "r mr position kindness offering ignorant s"
-#                                    "o up. Simplicity are melancholy preference"
-#                                    "considered saw companions. Disposal on out"
-#                                    "weigh do speedily in on. Him ham although "
-#                                    "thoughts entirely drawings. Acceptance unr"
-#                                    "eserved old admiration projection nay yet "
-#                                    "him. Lasted am so before on esteem vanity "
-#                                    "oh.\nFriendship contrasted solicitude insi"
-#                                    "pidity in introduced literature it. He see"
-#                                    "med denote except as oppose do spring my."),
+# # =============================================================================
+# #                         "message":("It real sent your at. Amounted all shy set"
+# #                                    "why followed declared. Repeated of endeavo"
+# #                                    "r mr position kindness offering ignorant s"
+# #                                    "o up. Simplicity are melancholy preference"
+# #                                    "considered saw companions. Disposal on out"
+# #                                    "weigh do speedily in on. Him ham although "
+# #                                    "thoughts entirely drawings. Acceptance unr"
+# #                                    "eserved old admiration projection nay yet "
+# #                                    "him. Lasted am so before on esteem vanity "
+# #                                    "oh.\nFriendship contrasted solicitude insi"
+# #                                    "pidity in introduced literature it. He see"
+# #                                    "med denote except as oppose do spring my."),
+# # =============================================================================
 #                         #"lieux": ["France", "Royaume-uni"],
 #                         #"current_e":["bn"],
-#                         "former_e":["dior"],
-#                         "keyword":"Artificial Intelligence",
+#                         #"former_e":["dior"],
+#                         #"keyword":"Artificial Intelligence",
 #                         # sector":["banque"],
 #                         #"school":["hec paris", "ICN"]
 #                        })
@@ -430,11 +419,11 @@ class Linkedin:
 # #                         "school":["hec paris", "ICN"]
 # #                        })
 # # =============================================================================
-#     SESSION.login()
-#     SESSION.page()
+#
+#
 #     SESSION.add()
-#     SESSION.like()
-#     SESSION.post()
+#     #SESSION.like()
+#     #SESSION.post()
 #     for info in SESSION.log_to_send:
 #         print(info)
 # =============================================================================

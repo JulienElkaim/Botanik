@@ -20,12 +20,11 @@ def read(order):
     Takes Object Order to use it and redirect it to the right function
     """
     start()
+    print("tag     :", order.tag)
+    print("network :", order.network)
     print("login   :", order.login)
     print("password:", order.password)
-    print("network :", order.network)
-    print("tag     :", order.tag)
     print("args    :", order.args)
-    print(order.args.__class__)
     print("log     :", order.log)
 
 # =============================================================================
@@ -36,24 +35,15 @@ def read(order):
 #     else:
 # =============================================================================
     session = Linkedin(order.login, order.password, order.args)
-    session.login()
-    session.page()
-# =============================================================================
-#     if(order.tag == "ADD"):
-#         Session.add()
-#     if(order.tag == "POST"):
-#         Session.post()
-#     if(order.tag == "POSTULER"): #unique for Linkedin
-#         Session.postuler
-# =============================================================================
-    #order.log(Session.log_to_send)
+
     if order.tag == "ADD":
         session.add()
     if order.tag == "POST":
         session.post()
     if order.tag == "LIKE":
         session.like()
+    session.close()
 
-    print(session.log_to_send)
     for element in session.log_to_send:
+        print(element)
         order.logs(element)

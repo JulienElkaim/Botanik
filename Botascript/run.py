@@ -18,7 +18,7 @@ ATTENTION A NE PAS METTRE DE ";" DANS LES LOGS
 from ben_script.order_treatment import read
 from back_process.Interface import getFakeDB
 from back_process.Interface import Orders
-from time import sleep
+#from time import sleep
 
 
 #===============/!\ IGNORE IT /!\=======================
@@ -41,8 +41,6 @@ def crash():
 def dev():
     """Developping side of this file"""
     getFakeDB()
-    print("sleep")
-    sleep(2)
     orders_to_exec = Orders()
     orders_to_exec.getWork()
 
@@ -51,9 +49,14 @@ def dev():
     for order in orders_to_exec:
         try:
             read(order)
-            order.logs("SUCCES:: Everything is fine")
+            order.logs("SUCCESS:: Order terminated succefully")
         except:
-            order.logs("ERROR:: Something wen't wrong :/")
+            order.logs("ERROR:: Something went wrong")
+        print("ORDER.LOGS")
+        count = 0
+        for log in order.log.split(";")[-1]:
+            print(count, ":", log)
+            count += 1
 
     orders_to_exec.finished() #Ensure to notify database
 
