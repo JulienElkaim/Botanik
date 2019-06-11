@@ -1,0 +1,75 @@
+<div class="card-main">
+	<h1>Archives</h1>
+	<p id="log-head-desc">Anciens ordres déjà éxécutés</p>
+	
+	<div class= "container-logs" >
+		
+		<% @orders.each do |order| %>
+	
+
+			<div class="card-log">
+				
+				
+				<h3 class= "card-log-title"> <%= order.title %></h3>
+				<div class= card-log-meta>
+					
+					<div class= "card-log-meta-exectime reduced">
+						<p> <%= icon("far", "clock") %> <%= order.exectime.strftime("%d/%m/%Y à %H:%M:%S") %>
+						</p>
+					</div>
+
+					<div class= "card-log-meta-exectime reduced">
+						<p> <%= icon("fas", "calendar-day") %> <%= order.endtime.strftime("%d/%m/%Y à %H:%M:%S") %>
+						</p>
+					</div>
+					<div class= "card-log-meta-exectime reduced">
+						<p> 
+							<%= icon("fas", "hourglass-end") %> <%= Order.convertSeconds(order.intervalle) %>
+						</p>
+					</div>
+					
+					
+				</div>
+				<div class= card-log-meta>
+					<div class= card-log-meta-network >
+						<p>
+							<%= icon("fas", "globe-europe") %>
+							<%= order.network.network_name %>
+							
+						</p>
+					</div>
+					<div class= card-log-meta-tag >
+						<p>
+							<%= icon("fas", "rocket") %>
+							<%= order.order_tag %>
+							
+						</p>
+					</div>
+				</div>
+				
+				
+				<div class="container-logs-messages">
+
+					
+						<div title="Ordre archivé." class="log log-success overflown">
+							Ordre archivé.
+						</div>
+						<div title="Logs disponibles dans le dashboard." class="log log-warning overflown">
+							<%= link_to "Logs disponibles dans le dashboard.", "/" %>
+						</div>
+					
+				</div>
+				
+				<div class= "card-log-more">
+					<p title="<%= order.order_args %>" class= "card-log-more-args overflown">
+						<%= order.order_args %> 
+					</p>
+				</div>
+				
+			</div>
+
+		<% end %>
+		
+	</div>	
+
+</div>

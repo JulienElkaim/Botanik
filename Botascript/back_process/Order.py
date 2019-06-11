@@ -52,6 +52,14 @@ class Order:
 
 
 
+	def chop_microseconds(self, delta):
+		tmp = delta.strftime("%Y-%m-%d %H:%M:%S")
+		dater = datetime.strptime(tmp, '%Y-%m-%d %H:%M:%S')
+		return dater
+		# return delta - datetime.timedelta(microseconds=delta.microseconds)
+
+
+
 	def realized(self, message = "DEFAULT"):
 		""" SAVE order's status and its logs in database
 			
@@ -76,7 +84,7 @@ class Order:
 			if next_exec > self.endtime:
 				self.alive = False
 			else:
-				self.exectime = next_exec
+				self.exectime = self.chop_microseconds(next_exec)
 				
 
 		self._save()

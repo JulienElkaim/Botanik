@@ -65,7 +65,7 @@ def dev():
 
         finish_time = datetime.datetime.now()
         delta = (finish_time - begin_time).total_seconds()
-        if delta > 60 :
+        if delta > 60 : # Run toutes les minutes
             continue # Faut runner guy, on est en retard sur le planning !
         else:
             sleep(60 - delta)

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #get 'users/home'
   get 'dashboard', to: 'pages#dashboard', as: :home
   get 'autre', to: 'pages#autre', as: :autre
+  get 'previous_orders', to: 'pages#orders_history', as: :history
   # get 'networks', to: 'networks#index', as: :autre
   
   root to: 'pages#dashboard'
