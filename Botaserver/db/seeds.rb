@@ -54,7 +54,7 @@ Order.create([
 	# ===== VICTOR
 	# 1
 	#Poster une annonce de recrutement UNE FOIS dans 5 heures [LOG] NO LOG !
-	{user_id: 1, title: "Poster une annonce de recrutement", network_id: 1, intervalle: 0, exectime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), endtime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), order_tag: "POST", order_args: '{"msg": "Bonjour, mon équipe est actuellement à la recherche du stagiaire de nos rêves...""}'},
+	{user_id: 1, title: "Poster une annonce de recrutement", network_id: 1, intervalle: 0, exectime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), endtime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), order_tag: "POST", order_args: '{"message": "Bonjour, mon équipe est actuellement à la recherche du stagiaire de nos rêves...""}'},
 	
 	# ===== JULIEN
 	# 2
@@ -67,7 +67,7 @@ Order.create([
 	
 	# 4
 	#Poster son CV sur Linkedin [LOG] Imaginer qu'il a déjà fait trois logs, MORT !
-	{user_id: 2, title: "Poster son CV", network_id: 1, intervalle: Order.convertTime("1 jour"), exectime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), order_tag: "POST", order_args: '{"post": "Cher réseaux, actuellement en M2 Informatique aux Mines Nancy..."}', alive: false},
+	{user_id: 2, title: "Poster son CV", network_id: 1, intervalle: Order.convertTime("1 jour"), exectime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), order_tag: "POST", order_args: '{"message": "Cher réseaux, actuellement en M2 Informatique aux Mines Nancy..."}', alive: false},
 ])
 
 #Order 2
