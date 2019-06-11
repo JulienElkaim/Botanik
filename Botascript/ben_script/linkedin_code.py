@@ -44,7 +44,7 @@ class Linkedin:
     """
     def __init__(self, login, password, arg):
         """Init variables"""
-        self.driver = webdriver.Chrome('../chromedriver') # Anciennement FIREFOX
+        self.driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver') # Anciennement FIREFOX
         self.mail = login
         self.password = password
         self.arg = arg
