@@ -30,7 +30,7 @@ import datetime
 # =============================================================================
 def crash():
     """Do whatever you want here"""
-    getFakeDB() #Erase DB and create fake records.
+    #getFakeDB() #Erase DB and create fake records.
     orders_to_exec = Orders()
     orders_to_exec.getWork()
     print("=========== THIS IS A WAR ZONE =============")
