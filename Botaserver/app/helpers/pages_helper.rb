@@ -18,5 +18,7 @@ module PagesHelper
 		.gsub("WARNING:: ","").to_s
 		.gsub("FAIL::","").to_s
 		.gsub("FAIL:: ","").to_s
+		.gsub("ERROR::","").to_s
+		.gsub("ERROR:: ","").to_s
 	end
 end

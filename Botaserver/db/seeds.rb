@@ -11,9 +11,9 @@
 #Create Fake Users
 User.create([
 	{username: "Victor Ben-Ami", password: "ciarletta", email:"victor.ben-ami@hotmail.com"},
-	{username: "Benjamin Soulan", password: "ciarletta", email: "benjamin.soulan@orange.fr"},
-	{username: "Julien Elkaim", password: "ciarletta", email: "benjamin.soulan@orange.fr"}
+	{username: "Laurent Ciarletta", password: "ciarletta", email: "laurent.ciarletta@loria.fr"}
 ])
+
 # end
 
 
@@ -30,11 +30,9 @@ Network.create([
 #Create Fake Accounts
 Account.create([
 	{user_id: 1, network_id: 1,network_login: "victor.ben-ami@hotmail.com", network_password: "Vo0RdQBkNZrB2usB9Hum" },
-	{user_id: 1, network_id: 2,network_login: "julien.instagram@gmail.com", network_password: "JusDePommeInstagram" },
-	{user_id: 2, network_id: 1,network_login: "benjamin.linkedin@orange.fr", network_password: "BenjaminButtonLinkedin" },
-	{user_id: 2, network_id: 2,network_login: "benjamin.instagram@orange.fr", network_password: "BenjaminButtonInstagram"},
-	{user_id: 2, network_id: 3,network_login: "benjamin.facebook@orange.fr", network_password: "BenjaminButtonFacebook"},
-	{user_id: 2, network_id: 4,network_login: "benjamin.twitter@orange.fr", network_password: "BenjaminButtonTwitter"}
+	{user_id: 2, network_id: 1,network_login: "julienelk@gmail.com", network_password: "Spraide" },
+	{user_id: 2, network_id: 2,network_login: "julienelk@gmail.com", network_password: "Spraide"}
+	
 ])
 #end
 
@@ -53,45 +51,38 @@ Order.create([
 	#toutes les 3 semaines, 
 	#sur LINKEDIN
 
-
-	{user_id: 1, title: "Un ordre classique, a exec deux min apres", network_id: 1, intervalle: Order.convertTime("4 heures"), exectime: Time.now.utc.change(usec: 0), endtime: Time.now.utc.change(usec: 0), order_tag: "ADD", order_args: '{"until": 15}'},
-	{user_id: 1, title: "Teste de former_e avec de sogé", network_id: 1, intervalle: Order.convertTime("5 minutes"), exectime: (Time.now.utc + 60*3).change(usec: 0), endtime: (Time.now.utc + 60*60).change(usec: 0), order_tag: "ADD", order_args: '{"until": 10, "former_e": ["societe ge"]}'},
-	{user_id: 1, title: "ici on test lieux et former_e ensemble", network_id: 1, intervalle: Order.convertTime("2 minutes"), exectime: Time.now.utc.change(usec: 0), endtime: Time.now.utc.change(usec: 0), order_tag: "ADD", order_args: '{"until": 10, "lieux": ["France"],"former_e": ["rotschild"]}'}
-
-
-	#Julien veut liker 50 personnes,
-	#une seule fois,
-	#sur INSTAGRAM
-	#{user_id: 1, title: "I love you all", network_id: 2, intervalle: 0, exectime: DateTime.new(2019,6,9,10,03,59), endtime: DateTime.new(2019,5,29,4,5,6), order_tag: "LIKE", order_args: '{"Until": 50}'},
+	# ===== VICTOR
+	# 1
+	#Poster une annonce de recrutement UNE FOIS dans 5 heures [LOG] NO LOG !
+	{user_id: 1, title: "Poster une annonce de recrutement", network_id: 1, intervalle: 0, exectime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), endtime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), order_tag: "POST", order_args: '{"msg": "Bonjour, mon équipe est actuellement à la recherche du stagiaire de nos rêves...""}'},
 	
-	#Julien veut liker 10 postes,
-	#CONDITION 1 : Créés par des personnes dont la description est exactement "Marketing de réseaux",
-	#CONDITION 2 : Dont le corps de texte contient "Mon cher réseaux",
-	#tous les 3 jours,
-	#sur LINKEDIN
-	#{user_id: 1, title:"Relations Marketing de réseaux", network_id: 1, intervalle: Order.convertTime("3 jours"), exectime: DateTime.new(2019,6,10,12,59,59), endtime: DateTime.new(2019,5,30,4,5,6), order_tag: "LIKE", order_args: '{"until": 10 ,"Fonction_match": "Marketing de réseaux", "Body_contains": "Mon cher réseaux"}'},
+	# ===== JULIEN
+	# 2
+	#Ajouter des amis tous les 4 heures [LOG] Imaginer que il a déjà fait 3 logs, VIVANT !
+	{user_id: 2, title: "Concours I-Lab: Max de contact !", network_id: 1, intervalle: Order.convertTime("4 heures"), exectime: (Time.now.utc + Order.convertTime("4 heures")).change(usec: 0) , endtime: (Time.now.utc + Order.convertTime("1 semaines")).change(usec: 0), order_tag: "ADD", order_args: '{"until": 15}'},
 	
-	#Benjamin veut liker 100 photo instagram,
-	#CONDITION 1 : Dont la description contient un des # suivants : #TropPopulaire #PoissonRouge
-	#tous les jours,
-	#sur INSTAGRAM
-	#{user_id: 2, title: "Tu m'likes j'te like !", network_id: 2, intervalle: Order.convertTime("1 jour"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2019,6,14,4,2,6), order_tag: "LIKE", order_args: '{"until": 100 ,"Desc_match_or": ["#TropPopulaire","#PoissonRouge"]}'},
+	# 3
+	#Demander UNE FOIS à tous mes contacts de liker mon projet [LOG] C'était y a une semaine, MORT !
+	{user_id: 2, title: "Demander de liker mon projet", network_id: 3, intervalle: 0, exectime: (Time.now.utc - Order.convertTime("1 semaines")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("1 semaines")).change(usec: 0), order_tag: "MSG", order_args: '{"contact": "all", "until": 10, "msg": "Bonjour !\n Pourrais tu prendre deux secondes pour liker mon projet sur I-Lab?"}', alive: false},
 	
-	#Benjamin veut ajouter autant de personnes possible,
-	#toutes les 5 heures,
-	#sur LINKEDIN
-	#{user_id: 2, title: "Je prends tout le monde !", network_id: 1, intervalle: Order.convertTime("5 heures"), exectime: DateTime.new(2019,5,29,4,5,6), endtime: DateTime.new(2020,6,15,4,5,6), order_tag: "ADD", order_args: '{}'},
-
+	# 4
+	#Poster son CV sur Linkedin [LOG] Imaginer qu'il a déjà fait trois logs, MORT !
+	{user_id: 2, title: "Poster son CV", network_id: 1, intervalle: Order.convertTime("1 jour"), exectime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), order_tag: "POST", order_args: '{"post": "Cher réseaux, actuellement en M2 Informatique aux Mines Nancy..."}', alive: false},
 ])
-=begin
-Log.create(order_id: 1, exectime: DateTime.new(2000,5,30,4,5,7),  message: "SUCCESS:: Notifie d'un succès;")
-Log.create(order_id: 2, exectime: DateTime.new(2000,5,30,4,5,6),  message: "SUCCESS:: Vous avez réussi votre tâche. ;WARNING:: L'ordre a fini mais on s'est fait bloquer à 30 likes environ. Vérifiez si Instagram ne vous a pas bloqué;")
-Log.create(order_id: 1, exectime: DateTime.new(2000,5,30,4,5,8),  message: "FAIL:: Notifie d'un échec dans l'éxécution;")
 
-Log.create(order_id: 3, exectime: DateTime.new(2000,5,30,4,6,7),  message: "SUCCESS:: Notifie d'un succès;")
-Log.create(order_id: 2, exectime: DateTime.new(2000,5,30,4,6,6),  message: "SUCCESS:: Notifie d'un succès;WARNING:: Notifie d'une anomalie;")
-Log.create(order_id: 5, exectime: DateTime.new(2000,5,30,4,6,8),  message: "FAIL:: Notifie d'un échec dans l'éxécution;")
-=end
+#Order 2
+Log.create(order_id: 2, exectime: (Time.now.utc - Order.convertTime("8 heures")).change(usec: 0),  message: "SUCCESS:: Ajouts effectués;WARNING:: Seulement 13 personnes ajoutées.")
+Log.create(order_id: 2, exectime: (Time.now.utc - Order.convertTime("4 heures")).change(usec: 0),  message: "SUCCESS:: Ajouts effectués;")
+Log.create(order_id: 2, exectime: Time.now.utc.change(usec: 0),  message: "FAIL:: Linkedin vous interdit d'ajouter plus d'amis;")
+
+#Order 3
+Log.create(order_id: 3, exectime:(Time.now.utc - Order.convertTime("1 semaines")).change(usec: 0) ,  message: "SUCCESS:: Messages envoyés;WARNING:: Seulement 168 personnes ont reçu le message.")
+
+#Order 4
+Log.create(order_id: 4, exectime:(Time.now.utc - Order.convertTime("7 jours")).change(usec: 0),  message: "SUCCESS:: Message envoyé avec succès.")
+Log.create(order_id: 4, exectime:(Time.now.utc - Order.convertTime("8 jours")).change(usec: 0),  message: "SUCCESS:: Message envoyé avec succès.")
+Log.create(order_id: 4, exectime:(Time.now.utc - Order.convertTime("9 jours")).change(usec: 0),  message: "SUCCESS:: Message envoyé avec succès.")
+
 
 
 #================ STUFF FOR EDITING =====================================

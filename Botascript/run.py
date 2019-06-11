@@ -18,6 +18,8 @@ ATTENTION A NE PAS METTRE DE ";" DANS LES LOGS
 from ben_script.order_treatment import read
 from back_process.Interface import getFakeDB
 from back_process.Interface import Orders
+from time import sleep
+import datetime
 #from time import sleep
 
 
@@ -42,23 +44,34 @@ def dev():
     """Developping side of this file"""
     getFakeDB()
     orders_to_exec = Orders()
-    orders_to_exec.getWork()
+    
 
-    print("=========== DEVELOPMENT MODE ===========")
+    
+    while(1):
+        print("=========== DEVELOPMENT MODE ===========")
+        begin_time = datetime.datetime.now()
 
-    for order in orders_to_exec:
-        try:
-            read(order)
-            order.logs("SUCCESS:: Order terminated succefully")
-        except:
-            order.logs("ERROR:: Something went wrong")
-        print("ORDER.LOGS")
-        count = 0
-        for log in order.log.split(";")[-1]:
-            print(count, ":", log)
-            count += 1
+        orders_to_exec.getWork()
+        for order in orders_to_exec:
+            try:
+                read(order)
+                order.logs("SUCCESS:: Order terminated succefully")
+            except:
+                order.logs("FAIL:: Chromium s'est arrêté sans explication.")
+            print("ORDER.LOGS == ", order.log)
+            
 
-    orders_to_exec.finished() #Ensure to notify database
+        orders_to_exec.finished() #Ensure to notify database of what the script have done
+
+        finish_time = datetime.datetime.now()
+        delta = (finish_time - begin_time).total_seconds()
+        if delta > 60 :
+            continue # Faut runner guy, on est en retard sur le planning !
+        else:
+            sleep(60 - delta)
+
+        
+
 
 def prod():
     """Production side of this file"""
