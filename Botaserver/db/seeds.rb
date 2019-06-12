@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+mode = "DEMO"
 
 #Create Fake Users
 User.create([
@@ -44,31 +44,49 @@ Account.create([
 # "school": ["hec paris", "ICN"]
 # DateTime.new(2019,6,9,15,59,59)
 
-#Create Fake Orders ------ /!\ Changer les dates pour qu'elles soient utiles ! /!\
-Order.create([
+if (mode == "DEMO")
+	#Create Fake Orders ------ /!\ Changer les dates pour qu'elles soient utiles ! /!\
+	Order.create([
 
-	#Julien veut ajouter 100 personnes, 
-	#toutes les 3 semaines, 
-	#sur LINKEDIN
+		#Julien veut ajouter 100 personnes, 
+		#toutes les 3 semaines, 
+		#sur LINKEDIN
 
-	# ===== VICTOR
-	# 1
-	#Poster une annonce de recrutement UNE FOIS dans 5 heures [LOG] NO LOG !
-	{user_id: 1, title: "Poster une annonce de recrutement", network_id: 1, intervalle: 0, exectime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), endtime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), order_tag: "POST", order_args: '{"message": "Bonjour, mon équipe est actuellement à la recherche du stagiaire de nos rêves...""}'},
-	
-	# ===== JULIEN
-	# 2
-	#Ajouter des amis tous les 4 heures [LOG] Imaginer que il a déjà fait 3 logs, VIVANT !
-	{user_id: 2, title: "Concours I-Lab: Max de contact !", network_id: 1, intervalle: Order.convertTime("4 heures"), exectime: (Time.now.utc + Order.convertTime("4 heures")).change(usec: 0) , endtime: (Time.now.utc + Order.convertTime("1 semaines")).change(usec: 0), order_tag: "ADD", order_args: '{"until": 15}'},
-	
-	# 3
-	#Demander UNE FOIS à tous mes contacts de liker mon projet [LOG] C'était y a une semaine, MORT !
-	{user_id: 2, title: "Demander de liker mon projet", network_id: 3, intervalle: 0, exectime: (Time.now.utc - Order.convertTime("1 semaines")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("1 semaines")).change(usec: 0), order_tag: "MSG", order_args: '{"contact": "all", "until": 10, "msg": "Bonjour !\n Pourrais tu prendre deux secondes pour liker mon projet sur I-Lab?"}', alive: false},
-	
-	# 4
-	#Poster son CV sur Linkedin [LOG] Imaginer qu'il a déjà fait trois logs, MORT !
-	{user_id: 2, title: "Poster son CV", network_id: 1, intervalle: Order.convertTime("1 jour"), exectime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), order_tag: "POST", order_args: '{"message": "Cher réseaux, actuellement en M2 Informatique aux Mines Nancy..."}', alive: false},
-])
+		# ===== VICTOR
+		# 1
+		#Poster une annonce de recrutement UNE FOIS dans 5 heures [LOG] NO LOG !
+		{user_id: 1, title: "Poster une annonce de recrutement", network_id: 1, intervalle: 0, exectime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), endtime: (Time.now.utc + Order.convertTime("5 heures")).change(usec: 0), order_tag: "POST", order_args: '{"message": "Bonjour, mon équipe est actuellement à la recherche du stagiaire de nos rêves...""}'},
+		
+		# ===== JULIEN
+		# 2
+		#Ajouter des amis tous les 4 heures [LOG] Imaginer que il a déjà fait 3 logs, VIVANT !
+		{user_id: 2, title: "Concours I-Lab: Max de contact !", network_id: 1, intervalle: Order.convertTime("4 heures"), exectime: (Time.now.utc + Order.convertTime("4 heures")).change(usec: 0) , endtime: (Time.now.utc + Order.convertTime("1 semaines")).change(usec: 0), order_tag: "ADD", order_args: '{"until": 15}'},
+		
+		# 3
+		#Demander UNE FOIS à tous mes contacts de liker mon projet [LOG] C'était y a une semaine, MORT !
+		{user_id: 2, title: "Demander de liker mon projet", network_id: 3, intervalle: 0, exectime: (Time.now.utc - Order.convertTime("1 semaines")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("1 semaines")).change(usec: 0), order_tag: "MSG", order_args: '{"contact": "all", "until": 10, "msg": "Bonjour !\n Pourrais tu prendre deux secondes pour liker mon projet sur I-Lab?"}', alive: false},
+		
+		# 4
+		#Poster son CV sur Linkedin [LOG] Imaginer qu'il a déjà fait trois logs, MORT !
+		{user_id: 2, title: "Poster son CV", network_id: 1, intervalle: Order.convertTime("1 jour"), exectime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), endtime: (Time.now.utc - Order.convertTime("7 jours")).change(usec: 0), order_tag: "POST", order_args: '{"message": "Cher réseaux, actuellement en M2 Informatique aux Mines Nancy..."}', alive: false},
+	])
+else
+	Order.create([
+
+		# ===== VICTOR
+		# 1
+		#Poster un hello world UNE FOIS et maintenant
+		{user_id: 1, title: "Poster un hello world !", network_id: 1, intervalle: 0, exectime: Time.now.utc.change(usec: 0), endtime: Time.now.utc.change(usec: 0), order_tag: "POST", order_args: '{"message": "Bonjour\n le monde !"}'},
+		
+		# ===== VICTOR
+		# 2
+		#Ajouter des amis tous les 4 minutes pendant une semaine
+		{user_id: 1, title: "Ajoute 10 pers toutes les 4 minutes!", network_id: 1, intervalle: Order.convertTime("4 minutes"), exectime: Time.now.utc.change(usec: 0) , endtime: (Time.now.utc + Order.convertTime("1 semaines")).change(usec: 0), order_tag: "ADD", order_args: '{"until": 10}'},
+		
+	])
+
+end
+
 
 #Order 2
 Log.create(order_id: 2, exectime: (Time.now.utc - Order.convertTime("8 heures")).change(usec: 0),  message: "SUCCESS:: Ajouts effectués;WARNING:: Seulement 13 personnes ajoutées.")
