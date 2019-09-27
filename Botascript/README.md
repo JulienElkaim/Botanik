@@ -1,3 +1,13 @@
+
+# p Order.all.size
+# p Order.first.alive
+# p Order.all.to_a.select(&:alive?)
+
+
+
+
+
+
 # Botascript - Instructions
 
 Enjoy your life.
@@ -10,11 +20,11 @@ Tout ce dont tu as besoin c'est de savoir manipuler un objet de la class Order()
 
 Ces objets te permettent de retirer des informations sous forme d'attributs:
 
-- **tag** 		Qui est l'action à réaliser 
+- **tag** 		Qui est l'action à réaliser
 	*(Ex: "ADD", "LIKE", "COMMENT", ... )*
-- **args** 		Qui est un dictionnaire d'arguments pour l'action 
+- **args** 		Qui est un dictionnaire d'arguments pour l'action
 	*(Ex: {"Until":100} )*
-- **network** 	Qui est le nom du Network sur lequel opérer. 
+- **network** 	Qui est le nom du Network sur lequel opérer.
 	*(Ex: "Linkedin", "Twitter")*
 - **login** 		Qui est le login/username de l'utilisateur sur ce network.
 - **password** 	Qui est le password de l'utilisateur sur ce network.
@@ -39,7 +49,7 @@ for order in orders:
 	# Oh, this order finished to execute !
 	order.logs("SUCCESS::: Some relative success message juste here.")
 
-		
+
 
 orders.finished() #Ensure to notify database that these orders were executed.
 

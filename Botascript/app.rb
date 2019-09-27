@@ -4,25 +4,13 @@ require 'open-uri'
 
 
 # Gestion des active record cote script !
+require_relative "database/connexion"
 
-require 'active_record'
+# p Order.all.size
+# p Order.first.alive
+# p Order.all.to_a.select(&:alive?)
 
-ActiveRecord::Base.establish_connection(adapter: 'sqlite3',database: '../Botaserver/db/development.sqlite3')
+# 1 Find orders alive :
+alive_orders = Order.all.where.not(alive: false)
 
-require_relative '../Botaserver/app/models/application_record.rb'
-Dir["../Botaserver/app/models/concerns/*.rb"].each do |file|
-  require_relative file
-end
-
-Dir["../Botaserver/app/models/*.rb"].each do |file|
-  require_relative file unless file.include?("user.rb")
-end
-
-class User < ApplicationRecord
-  has_many :accounts
-  has_many :orders
-  has_many :logs, :through => :orders
-end
-
-p Order.first
-p Order.all.size
+# 1 Find Orders to exec :
