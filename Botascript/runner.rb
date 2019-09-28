@@ -25,7 +25,7 @@ def run_botascript
 
       # STUFF TO DO HERE !
       # STUFF TO DO HERE !
-      sleep(15) #Simulate big stuff
+      sleep(20) #Simulate big stuff
       # STUFF TO DO HERE !
       # STUFF TO DO HERE !
     end
