@@ -11,4 +11,9 @@ class Order < ApplicationRecord
   def self.convertSeconds(arg)
   	return Time::integerConverter(arg)
   end
+
+  def self.exec_scope
+    return where("alive = ?", 1).where("exectime <= ?", Time.now() )
+    # Should return an ActiveRecord::Relation.
+  end
 end
