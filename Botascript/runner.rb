@@ -6,12 +6,15 @@
 def run_botascript
 
   # 1 Find orders to execute
+    # => Alive, exec triggered, not processing
   taff = Order.exec_scope()
 
   # 2 Les marquer IN_PROCESS:
   taff.each do |order|
+    order.update(processing: true)
     # Marquer les ordres IN_PROCESS
   end
+
 
   # 3 Lance les ordres en parallèle:
   sons = []
@@ -43,7 +46,13 @@ def run_botascript
     end
   end
 
-  # 5 FACULTATIF : Remplir des logs d'exec de Botascript
+  # 5 Enlever le processing
+  taff.each do |order|
+    order.update(processing: false)
+    # Marquer les ordres NOT_IN_PROCESS
+  end
+
+  # 6 FACULTATIF : Remplir des logs d'exec de Botascript
     # Ces logs servent à rendre compte facilement du nombre de fois
     # Ou le Botascript a du buter ses enfants et
     # les ordres liés à ces enfants

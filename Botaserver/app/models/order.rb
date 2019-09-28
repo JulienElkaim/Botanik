@@ -13,7 +13,7 @@ class Order < ApplicationRecord
   end
 
   def self.exec_scope
-    return where("alive = ?", 1).where("exectime <= ?", Time.now() )
+    return where("alive = ?", 1).where("exectime <= ?", Time.now() ).where("processing = ?", 0)
     # Should return an ActiveRecord::Relation.
   end
 end
