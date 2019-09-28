@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_130915) do
+ActiveRecord::Schema.define(version: 2019_09_28_125341) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "user_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_130915) do
     t.datetime "updated_at", null: false
     t.boolean "alive", default: true
     t.string "title"
+    t.boolean "processing", default: false
     t.index ["network_id"], name: "index_orders_on_network_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
