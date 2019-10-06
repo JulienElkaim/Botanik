@@ -1,7 +1,5 @@
-# require 'time'
-# require 'selenium-webdriver'
-# require 'open-uri'
-
+require 'selenium-webdriver'
+require_relative 'treatment/processor'
 
 def run_botascript
 
@@ -20,15 +18,20 @@ def run_botascript
   sons = []
   taff.each do |order|
     sons << fork do
+      # 3.0.b S'assurer que la db est bien connected :
       preventive_db_reconnection()
-      p "I am the son #{Process.pid}. I do stuff on order n° #{order.id}"
 
-      # STUFF TO DO HERE !
-      # STUFF TO DO HERE !
-      sleep(20) #Simulate big stuff
-      # STUFF TO DO HERE !
-      # STUFF TO DO HERE !
+      # 3.1 Créer le web browser:
+      options = Selenium::WebDriver::Chrome::Options.new
+      options.add_argument('--headless')
+      browser = Selenium::WebDriver.for :chrome#, options: options
+
+      # 3.2 Passer la main au processor qui va traiter l'ordre:
+      processor  = Processor.new(order, browser)
+      processor.proceed(mode="testing")
     end
+    # Fils mort à partir d'ici....
+
   end
 
   # 4 Donner 10 minutes pour finir, sinon kill :
@@ -46,17 +49,14 @@ def run_botascript
     end
   end
 
-  # 5 Enlever le processing
+  # 5 Enlever le IN PROCESS attribute : "processing"
   taff.each do |order|
     order.update(processing: false)
     # Marquer les ordres NOT_IN_PROCESS
   end
 
-  # 6 FACULTATIF : Remplir des logs d'exec de Botascript
-    # Ces logs servent à rendre compte facilement du nombre de fois
-    # Ou le Botascript a du buter ses enfants et
-    # les ordres liés à ces enfants
-    # => Pour l'instant logs débiles ci dessous:
+  # 6 Remplir des logs GLOBALES d'exec de Botascript
+  # => Botascript a t'il été obligé de tuer ses process fils?
   key = "#{Time.now}"
   value = (unterminated_sons.nil? || unterminated_sons.empty?) ? "Pas d'enfanticide" : "J'ai kill #{unterminated_sons.size} de mes enfants..."
   log = "{\"#{key}\": \"#{value}\"};"
