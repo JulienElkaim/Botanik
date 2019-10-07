@@ -18,7 +18,7 @@ class NetworkMedia
     # 2 Executer l'ordre :
       public_send(order.order_tag.downcase, order.order_args)
     else
-      @reports["BUG:::conexion"]= "Failed to connect with linkedin's logs."
+      @reports["BUG::"]= "Failed to connect with these #{order.network.network_name}'s logs."
     end
 
     # 3 Envoie le reporting de cette execution

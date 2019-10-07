@@ -16,9 +16,11 @@ class Linkedin < NetworkMedia
 
   end
 
-  def post(args)
+  def add(args)
+    sleep(10)
     p args
-    p "lol j'ai exec"
+    p "L'ordre voudrait que j'add des gens mais pour l'instant je peux pas..."
+    @reports["BUG::"]= "We are not yet able to proceed like you asked to."
   end
 
   def auto_add(username, password)
