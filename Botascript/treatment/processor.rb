@@ -33,7 +33,7 @@ class Processor
       current_order_finished
 
     else
-      @logs = {"BUG::": "We don't support #{@order.network.network_name} yet."}
+      @logs[:ERROR] = "We don't support #{@order.network.network_name} yet."
       kill_the_order
       save_logs(@logs)
     end
@@ -60,7 +60,7 @@ class Processor
     end
 
     # 2 Sauver les logs d'execution:
-    save_logs((@logs.empty?) ? {"SUCCESS::": "How could it be more perfect?!"} : @logs)
+    save_logs((@logs.empty?) ? {SUCCESS: "No news... Good news?!"} : @logs)
 
   end
 

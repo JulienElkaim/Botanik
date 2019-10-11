@@ -55,7 +55,7 @@ def run_botascript
     # Marquer les ordres NOT_IN_PROCESS
   end
 
-  # 6 Remplir des logs GLOBALES d'exec de Botascript
+  # 6 Remplir des logs GLOBALES d'exec de Botascript (logs.txt, pas la db !)
   # => Botascript a t'il été obligé de tuer ses process fils?
   key = "#{Time.now}"
   value = (unterminated_sons.nil? || unterminated_sons.empty?) ? "Pas d'enfanticide" : "J'ai kill #{unterminated_sons.size} de mes enfants..."
