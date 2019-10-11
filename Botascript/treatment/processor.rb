@@ -1,5 +1,5 @@
 require 'json'
-require_relative 'scrappers/linkedin'
+require_relative 'scrappers/linkedin/linkedin'
 require 'time'
 # Router trop basique, à améliorer !
 # Qui va faire les logs sur l'ordre?!

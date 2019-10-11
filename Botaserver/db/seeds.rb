@@ -71,7 +71,7 @@ Order.create([
   # 5
   # Copie de celui juste en dessous pour avoir un truc a exec
   # {user_id: 1, title: "Poster un hello world !", network_id: 1, intervalle: 0, exectime: Time.now.utc.change(usec: 0), endtime: Time.now.utc.change(usec: 0), order_tag: "POST", order_args: '{"message": "Bonjour\n le monde !"}'},
-  {user_id: 1, title: "Ajoute 10 pers toutes les 4 minutes!", network_id: 1, intervalle: Order.convertTime("4 minutes"), exectime: Time.now.utc.change(usec: 0) , endtime: (Time.now.utc + Order.convertTime("1 semaines")).change(usec: 0), order_tag: "ADD", order_args: '{"until": 10}'},
+  {user_id: 1, title: "Ajoute 10 pers toutes les 4 minutes!", network_id: 1, intervalle: Order.convertTime("4 minutes"), exectime: Time.now.utc.change(usec: 0) , endtime: (Time.now.utc + Order.convertTime("1 semaines")).change(usec: 0), order_tag: "ADD", order_args: {"until": 10}},
 ])
 
 

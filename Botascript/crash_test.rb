@@ -6,7 +6,19 @@ require_relative "database/connexion"
 require_relative 'treatment/processor'
 connect_db(); #First time !
 
-sample_order = Order.first #Ordre Linkedin
+victor = User.first
+sample_order = Order.new(
+  user: victor,
+  title: "Every 4 minutes add 10 pers",
+  network_id: 1,
+  intervalle: Order.convertTime("4 minutes"),
+  exectime: Time.now.utc.change(usec: 0),
+  endtime: (Time.now.utc + Order.convertTime("1 semaines")).change(usec: 0),
+  order_tag: "ADD",
+  order_args: {until: 5}
+  )
+
+
 # p sample_order.network
 
 # 1 Créer le web browser:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_125341) do
+ActiveRecord::Schema.define(version: 2019_10_11_121141) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "user_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_09_28_125341) do
     t.datetime "exectime"
     t.datetime "endtime"
     t.string "order_tag"
-    t.string "order_args"
+    t.json "order_args"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "alive", default: true

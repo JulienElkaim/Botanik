@@ -1,4 +1,5 @@
 require 'selenium-webdriver'
+require 'time'
 
 class NetworkMedia
 
@@ -18,7 +19,7 @@ class NetworkMedia
     # 2 Executer l'ordre :
       public_send(order.order_tag.downcase, order.order_args)
     else
-      @reports["BUG::"]= "Failed to connect with these #{order.network.network_name}'s logs."
+      @reports[:ERROR]= "Failed to connect with these #{order.network.network_name}'s logs."
     end
 
     # 3 Envoie le reporting de cette execution
@@ -27,15 +28,34 @@ class NetworkMedia
 
   def connexion(order)
 
-    network_name = order.network.network_name.downcase
-    nwk_id = Network.find_by_network_name(network_name.capitalize).id
-
-    account = Order.first.user.accounts.where(network_id: nwk_id).first
+    nwk_id = order.network.id
+    account = order.user.accounts.where(network_id: nwk_id).first
     user = account.network_login
     password = account.network_password
-
     return self.public_send("connect_#{network_name}", user, password)
   end
+
+  # A RENDRE PLUS GENERIQUE
+  def connect_site
+    lets_try =1 #On considère que si ca fail une fois, ca fail toujours
+    we_tryied = 0
+    while lets_try>we_tryied
+      begin
+        yield
+        return true
+      rescue
+        puts "fail in login"
+        access_url("https://www.google.fr")
+        sleep(1)
+        we_tryied+=1
+      end
+    end
+    return false
+
+  end
+
+
+  private
 
   def fill_text_box(html_method,id_string, fill_text, waiter = @waiter)
     input = waiter.until {
@@ -54,54 +74,16 @@ class NetworkMedia
     @browser.get url
   end
 
-  def waiter_complete_load(nb)
-    threshold = nb+15
-    i=0
-    condition = true
-    returned_list = []
-    while(condition)
-      returned_list = yield
-      condition= returned_list.size < nb
-      i+=1
-      if i>=threshold
-        @reports["BUG:::Waiter"] = "Not enough card loaded"
-        return false
-      end
-      sleep(0.3)
-    end
-    return returned_list
+  def scroll_down(wait_seconds=2)
+    @browser.execute_script("window.scrollTo(0 , document.body.scrollHeight)")
+    @browser.execute_script("window.scrollBy(0,100)")
+    sleep(wait_seconds)
   end
 
-  def looking_for_list_of_items(options = {"nb": 1,"content":/[a-zA-Z0-9]*/})
-    list_items = waiter_complete_load(options[:nb]){
-      @browser.find_elements(options[:html_method],options[:id_string]).select{ |elt|
-        if options[:content].class == String
-          elt.text.downcase == options[:content]
-        else
-          elt.text.downcase =~ options[:content]
-        end
-      }
-    }
-    return list_items
+  def scroll_up(wait_seconds=2)
+    @browser.execute_script("window.scrollTo(document.body.scrollHeight , 0)")
+    sleep(wait_seconds)
   end
 
-
-  def connect_site
-    lets_try =1 #On considère que si ca fail une fois, ca fail toujours
-    we_tryied = 0
-    while lets_try>we_tryied
-      begin
-        yield
-        return true
-      rescue
-        puts "fail in login"
-        access_url("https://www.google.fr")
-        sleep(1)
-        we_tryied+=1
-      end
-    end
-    return false
-
-  end
 
 end
