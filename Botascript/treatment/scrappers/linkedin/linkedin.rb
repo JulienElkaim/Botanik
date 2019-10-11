@@ -10,9 +10,9 @@ class Linkedin < NetworkMedia
     return connect_site do
       access_url LINKEDIN_ROUTES_LOGIN
       # Add text to a text box
-      fill_text_box(:name,"session_key", user)
-      fill_text_box(:name,"session_password",mdp)
-      click_element(:xpath, "//*[@id='app__container']/main/div/form/div[3]/button")
+      fill_text_box(:name, LINKEDIN_SELECTOR_NAMES_USERNAME, user)
+      fill_text_box(:name, LINKEDIN_SELECTOR_NAMES_PASSWORD, mdp)
+      click_element(:xpath, LINKEDIN_SELECTOR_XPATH_LOGIN_BTN)
     end
 
   end
@@ -22,11 +22,11 @@ class Linkedin < NetworkMedia
     nb_add = [args["until"], 100 ].min
     access_url LINKEDIN_ROUTES_ADD
     yoyo_scroll nb_of_scroll_needed(nb_add)
-    addable_buttons = @browser.find_elements(:css, ".mn-discovery-tabs *[data-control-name='invite']")
+    addable_buttons = @browser.find_elements(:css, LINKEDIN_SELECTOR_CSS_ADD_BTN)
 
     while addable_buttons.size < nb_add
       yoyo_scroll 1
-      addable_buttons = @browser.find_elements(:css, ".mn-discovery-tabs *[data-control-name='invite']")
+      addable_buttons = @browser.find_elements(:css, LINKEDIN_SELECTOR_CSS_ADD_BTN)
     end
 
     nb_added_previously = 0
