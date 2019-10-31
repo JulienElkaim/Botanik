@@ -27,7 +27,7 @@ class NetworkMedia
   end
 
   def connexion(order)
-
+    network_name = order.network.network_name.downcase
     nwk_id = order.network.id
     account = order.user.accounts.where(network_id: nwk_id).first
     user = account.network_login
@@ -67,7 +67,13 @@ class NetworkMedia
   end
 
   def click_element(html_method,id_string)
-    @browser.find_element(html_method, id_string).click
+    begin
+      elt = @browser.find_element(html_method, id_string)
+    rescue
+      return false
+    else
+      elt.click
+    end
   end
 
   def access_url(url)
@@ -77,6 +83,11 @@ class NetworkMedia
   def scroll_down(wait_seconds=2)
     @browser.execute_script("window.scrollTo(0 , document.body.scrollHeight)")
     @browser.execute_script("window.scrollBy(0,100)")
+    sleep(wait_seconds)
+  end
+
+  def scroll_by(nb, wait_seconds = 1)
+    @browser.execute_script("window.scrollBy(0,#{nb})")
     sleep(wait_seconds)
   end
 
