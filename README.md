@@ -65,7 +65,7 @@ Botaserver use Devise's gem for user identification, which provides us with a go
 **WARNING: Contrary to User's passwords, network's passwords are stored as plain-text as Botascript will use them for scrapping purpose. Therefore, it is recommended to change your network's password before providing them to Botanik to avoid any unpleasant surprise.**
   
   
-##Contributing to Botanik  
+## Contributing to Botanik  
 
 Botanik is an Open Source project. If you want to suggest new features or enhancement feel free to fork the project on your side and make a pull request here.    
 
