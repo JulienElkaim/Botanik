@@ -7,11 +7,13 @@
 You won't manage your network by yourself anymore, let Botanik do that for you !  
 It combines a pretty simple web interface and an automated scrapping script both running independently of each other.   
 
-Just feed the application with your orders and it will manage to execute your order at time, and at the frequency you choosed  :
+Just feed the application with your orders and it will manage to execute your order at time, and at the frequency you choosed  :   
+
 ![alt text](img/orders_sample.png)  
   
  <br>
-When job is done, you can check execution's logs of your order in the dashboard. Any issue reported by Botanik? Just click the log and change the order for futures executions.
+When job is done, you can check execution's logs of your order in the dashboard. Any issue reported by Botanik? Just click the log and change the order for futures executions.  
+
 ![alt text](img/executions_sample.png)  
   
 
